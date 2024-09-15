@@ -1,0 +1,16 @@
+Address     Code        Basic                        Line Source
+
+0x00400000  0x000002b3  add x5,x0,x0                 5    	mv t0, zero		# pseudo: addi t0, zero, 0
+0x00400004  0x00100313  addi x6,x0,1                 6    	li t1, 1		# pseudo: addi t1, zero, 1
+0x00400008  0x00500893  addi x17,x0,5                8    	li a7, 5		# pseudo: addi a7, zero, 5
+0x0040000c  0x00000073  ecall                        9    	ecall			# I-type
+0x00400010  0x00a00e33  add x28,x0,x10               10   	mv t3, a0		# pseudo: addi t3, a0, 0
+0x00400014  0x000e0c63  beq x28,x0,0x00000018        12   	beqz t3, finish		# pseudo: beq t3. zero, finish
+0x00400018  0x005303b3  add x7,x6,x5                 13   	add t2, t1, t0		# R-type
+0x0040001c  0x006002b3  add x5,x0,x6                 14   	mv t0, t1		# pseudo: addi t0, t1, 0
+0x00400020  0x00700333  add x6,x0,x7                 15   	mv t1, t2		# pseudo: addi t1, t2, 0
+0x00400024  0xfffe0e13  addi x28,x28,0xffffffff      16   	addi t3, t3, -1		# I-type
+0x00400028  0xfedff06f  jal x0,0xffffffec            17   	j fib			# J-type
+0x0040002c  0x00100893  addi x17,x0,1                19   	li a7, 1		# pseudo: addi a7, zero, 1
+0x00400030  0x00500533  add x10,x0,x5                20   	mv a0, t0		# pseudo: addi a0, t0, 0
+0x00400034  0x00000073  ecall                        21   	ecall			# I-type
