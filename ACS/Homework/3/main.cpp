@@ -1,7 +1,6 @@
 #include <iostream>
 using std::cin;
 using std::cout;
-using std::string;
 
 void solution(const int&, const int&, const int&);
 
