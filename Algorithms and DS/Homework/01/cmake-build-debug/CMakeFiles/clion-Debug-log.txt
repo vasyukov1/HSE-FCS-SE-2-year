@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Algorithms and DS/Homework/01 Select CMakeLists.txt
