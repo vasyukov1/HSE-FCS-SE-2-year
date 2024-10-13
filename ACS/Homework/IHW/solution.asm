@@ -11,6 +11,13 @@ prompt_error_size:	.asciz "\nBro, you need input a number from 1 to 10. Try agai
 .text
 main:
 	jal get_size
+	
+	li t0 1			# Counter of elements
+	lw t1 n			# Array size
+	jal fill_array_A
+	
+	li a7 10
+	ecall
 
 
 get_size:
@@ -28,18 +35,17 @@ get_size:
 	bgt t0 t1 error_size
 	
 	la t1 n
-	sw t0 (t1)
+	sw t0 (t1) 
 	
-	li a7 1
-	lw a0 n
-	ecall 
+	jr ra
 	
-	li a7 10
-	ecall
+fill_array_A:
+	li 
+	
 	
 	
 error_size:
 	li a7 4
 	la a0 prompt_error_size
 	ecall
-	jal get_size
+	j get_size
