@@ -1,10 +1,10 @@
-
 .data
-res_p1:	.asciz "Max argument of factorial in 32-bit letter is "
+res_p1:	.asciz "LOOP SOLUTION\nThe largest argument whose factorial fits in 32-bit machine word is "
 res_p2:	.asciz ".\nFactorial: "
 
 .text
-main:	# The first part of message for answer
+main:	
+	# The first part of message for answer
 	li a7 4
 	la a0 res_p1
 	ecall
@@ -40,15 +40,15 @@ fact:	# Return: a0 - n (agrument of factorial), a1 - n! (value of factorial)
 	
 	li s0 1		# Variable for the argument of factorial
 	li s1 1 	# Variable for the value of factorial
-	
+
 loop:	addi s0 s0 1 	# Increase argument
 
 	sw ra 8(sp)
 	sw s0 4(sp)
 	sw s1 (sp)
 	
-	mv a0 s0
-	mv a1 s1
+	mv a2 s0
+	mv a3 s1
 	
 	jal check
 	
@@ -57,10 +57,10 @@ loop:	addi s0 s0 1 	# Increase argument
 	lw s1 (sp)
 	
 	# If there isn't overflow, go next
-	beqz a0 end_loop 
+	bnez a0 end_loop 
 	mul s1 s0 s1
 	j loop
-	
+
 end_loop:
 	# Return value of argument to correct after overflow
 	addi a0 s0 -1 
@@ -73,15 +73,14 @@ end_loop:
 	addi sp sp 12
 	
 	ret
-	
-check:	# Boolean function for checking overflow: 0 if overflow, else 1
-	mul t0 a0 a1
-	div t1 t0 a0
-	
-	bne t1 a1 overflow
-	li a0 1
-	ret
 
-overflow:
+check:	# Boolean function for checking overflow: 1 if overflow, else 0
+	mul t0 a2 a3
+	div t1 t0 a2
+	
+	bne t1 a3 overflow
 	li a0 0
+	ret
+overflow:
+	li a0 1
 	ret
