@@ -1,0 +1,110 @@
+.macro get_size(%x)
+	li  	a7 4
+  	la  	a0 prompt_size
+  	ecall
+  	li  	a7 5
+  	ecall
+  	mv  	%x a0
+.end_macro
+
+.macro check_size(%x)
+	li 	t0 1
+	li	t1 10
+	blt 	a0 t0 error
+	bgt 	a0 t1 error
+	li	%x 1
+	j	end_check
+error:	# Message that the array size is incorrect
+	li 	a7 4
+	la 	a0 prompt_er_size
+	ecall
+	li	%x 0
+end_check:
+.end_macro
+
+.macro add_element(%x)
+	li 	a7 4
+ 	la 	a0 prompt_element
+ 	ecall
+ 	li 	a7 5
+ 	ecall
+ 	mv 	%x a0
+.end_macro
+
+.macro print_element(%x)
+	li	a7 1
+	lw	a0 (%x)
+	ecall
+	li	a7 4
+	la	a0 sep
+	ecall
+.end_macro
+
+.macro print_array(%array, %size)
+	la	t0 %array
+	li	t2 0
+	lw	t3 %size
+print_el:
+	beq	t2 t3 end
+	print_element(t0)
+	addi	t0 t0 4
+	addi	t2 t2 1
+	j	print_el
+end:
+.end_macro
+
+.macro add_positive(%A, %B, %size, %pos)
+	la	t0 %A
+	la	t1 %B
+	li 	t2 0
+	lw	t3 %size
+next:	
+	beq 	t2 t3 end
+	lw 	t4 (t0)
+	blez 	t4 skip
+	sw 	t4 (t1)
+	addi 	t1 t1 4
+skip:	
+	addi 	t0 t0 4
+	addi 	t2 t2 1
+	j 	next
+end:
+	mv	%pos t1
+.end_macro
+
+.macro add_zeros(%A, %B, %size, %pos)
+	la	t0 %A
+	mv	t1 %B
+	li 	t2 0
+	lw	t3 %size
+next:	
+	beq 	t2 t3 end
+	lw 	t4 (t0)
+	bnez 	t4 skip
+	sw 	t4 (t1)
+	addi 	t1 t1 4
+skip:	
+	addi 	t0 t0 4
+	addi 	t2 t2 1
+	j 	next
+end:
+	mv	%pos t1
+.end_macro
+
+.macro add_negative(%A, %B, %size)
+	la	t0 %A
+	mv	t1 %B
+	li 	t2 0
+	lw	t3 %size
+next:	
+	beq 	t2 t3 end
+	lw 	t4 (t0)
+	bgez 	t4 skip
+	sw 	t4 (t1)
+	addi 	t1 t1 4
+skip:	
+	addi 	t0 t0 4
+	addi 	t2 t2 1
+	j 	next
+end:
+.end_macro
