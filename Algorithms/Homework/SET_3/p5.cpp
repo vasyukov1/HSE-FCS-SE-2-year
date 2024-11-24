@@ -1,101 +1,107 @@
 #include <iostream>
+#include <string>
+#include <limits>
+#include <sstream>
 #include <vector>
+#include <random>
 using std::cin;
 using std::cout;
-using std::vector;
 using std::string;
+typedef std::vector<unsigned char> vector;
+typedef unsigned int uint;
 
-string hexCharToBin(char c);
-string hexToBin(string hex);
-void makeMatrix(vector<vector<int> >& matrix, int n);
-vector<vector<int> > multiply(const vector<vector<int> >& A, const vector<vector<int> >& B, int n);
-bool areMatricesEqual(const vector<vector<int> >& A, const vector<vector<int> >& B, int n);
+vector hexToBin(string number, uint size, uint digitSize);
+std::vector<vector> fillMatrix(uint n, uint m);
+vector multiply(std::vector<vector>& matrix1, vector& vec, uint n);
+bool verification(std::vector<vector>& A, std::vector<vector>& B, std::vector<vector>& C, uint n);
+bool check(std::vector<vector>& A, std::vector<vector>& B, std::vector<vector>& C, uint n);
 
-int main() { 
+std::random_device rand_dev;
+std::mt19937 generator(rand_dev());
+std::uniform_int_distribution<> distr(0, 1);
+
+int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
     int n;
     cin >> n;
 
-    vector<vector<int> > A(n, vector<int>(n, 0));
-    vector<vector<int> > B(n, vector<int>(n, 0));
-    vector<vector<int> > C(n, vector<int>(n, 0));
-    makeMatrix(A, n);
-    makeMatrix(B, n);
-    makeMatrix(C, n);
+    int m = n / 4 + (n % 4 != 0 ? 1 : 0);
 
-    if (areMatricesEqual(C, multiply(A, B, n), n)) {
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
-    }
-
+    std::vector<vector> A = fillMatrix(n, m);
+    std::vector<vector> B = fillMatrix(n, m);
+    std::vector<vector> C = fillMatrix(n, m);
+    
+    cout << (check(A, B, C, n) ? "YES" : "NO");
     return 0;
 }
 
-string hexCharToBin(char c) {
-    switch (c) {
-        case '0': return "0000";
-        case '1': return "0001";
-        case '2': return "0010";
-        case '3': return "0011";
-        case '4': return "0100";
-        case '5': return "0101";
-        case '6': return "0110";
-        case '7': return "0111";
-        case '8': return "1000";
-        case '9': return "1001";
-        case 'A': return "1010";
-        case 'B': return "1011";
-        case 'C': return "1100";
-        case 'D': return "1101";
-        case 'E': return "1110";
-        case 'F': return "1111";
-        default: return "";
-    }
-}
+vector hexToBin(string number, uint size, uint digitSize) {
+    vector binary(size);
+    uint count = digitSize << 2;
+    uint del = count - size;
+    uint index = size - 1;
 
-string hexToBin(string hex) {
-    string bin = "";
-    for (int i = 0; i < hex.length(); ++i) {
-        bin += hexCharToBin(hex[i]);
-    }
-    return bin;
-}
+    for (int i = number.length() - 1; i >= 0 && count > 0; --i) {
+        char ch = number[i];
+        ch -= (ch <= '9' ? '0' : 'A' - 10);
 
-void makeMatrix(vector<vector<int> >& matrix, int n) {
-    for (int i = 0; i < n; ++i) {
-        string num16;
-        cin >> num16;
-        string num2 = hexToBin(num16);
-        for (int j = 0; j < n; ++j) {
-            int el = num2[j] - '0';
-            matrix[i][j] = el;
+        for (int j = 0; j < 4 && count > 0; ++j, --count) {
+            if (del > 0) {
+                --del;
+            } else {
+                binary[index--] = ch & 1;
+            }
+            ch >>= 1;
         }
     }
+    return binary;
 }
 
-vector<vector<int> > multiply(const vector<vector<int> >& A, const vector<vector<int> >& B, int n) {
-    vector<vector<int> > C(n, vector<int>(n, 0));
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            int sum = 0;
-            for (int k = 0; k < n; ++k) {
-                sum ^= A[i][k] & B[k][j];
-            }
-            C[i][j] = sum;
+std::vector<vector> fillMatrix(uint n, uint m) {
+    string number;
+    std::vector<vector> matrix(n);
+    for (uint i = 0; i < n; ++i) {
+        cin >> number;
+        matrix[i] = hexToBin(number, n, m);
+    }
+    return matrix;
+}
+
+vector multiply(std::vector<vector>& matrix1, vector& vec, uint n) {
+    vector result(n);
+    for (uint i = 0; i < n; i++) {
+        result[i] = 0;
+        for (uint k = 0; k < n; k++) {
+            result[i] ^= matrix1[i][k] & vec[k];
         }
     }
-    return C;
+    return result;
 }
 
-bool areMatricesEqual(const vector<vector<int> >& A, const vector<vector<int> >& B, int n) {
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            if (A[i][j] != B[i][j]) {
-                return false;
-            }
+bool verification(std::vector<vector>& A, std::vector<vector>& B, std::vector<vector>& C, uint n) {
+    vector random_vector(n);
+    for (uint i = 0; i < n; ++i) {
+        random_vector[i] = distr(generator);
+    }
+
+    vector B_vec = multiply(B, random_vector, n);
+    vector X = multiply(A, B_vec, n);
+    vector Y = multiply(C, random_vector, n);
+
+    for (uint i = 0; i < n; ++i) {
+        if (X[i] != Y[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool check(std::vector<vector>& A, std::vector<vector>& B, std::vector<vector>& C, uint n) {
+    for (uint i = 0; i < 10; ++i) {
+        if (!verification(A, B, C, n)) {
+            return false;
         }
     }
     return true;
