@@ -1,0 +1,15 @@
+Librarian is seeing reader 1
+Librarian gave to reader 1 book 0
+Librarian gave to reader 1 book 1
+Librarian is seeing reader 2
+Reader 1 is reading book 0
+Reader 1 is reading book 1
+Librarian gave to reader 2 book 0
+Librarian gave to reader 2 book 1
+Reader 1 returned book 1
+Reader 2 is reading book 1
+Reader 2 returned book 1
+Reader 1 returned book 0
+Reader 2 is reading book 0
+Reader 2 returned book 0
+Library is now closed.

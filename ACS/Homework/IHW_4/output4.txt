@@ -1,0 +1,1001 @@
+Librarian is seeing reader 1
+Librarian gave to reader 1 book 1212
+Librarian gave to reader 1 book 3920
+Librarian gave to reader 1 book 4031
+Librarian is seeing reader 2
+Reader 1 is reading book 4031
+Reader 1 is reading book 3920
+Reader 1 is reading book 1212
+Reader 1 returned book 4031
+Reader 1 returned book 1212
+Librarian gave to reader 2 book 1576
+Librarian gave to reader 2 book 2290
+Librarian gave to reader 2 book 4300
+Librarian is seeing reader 3
+Reader 2 is reading book 4300
+Reader 2 is reading book 1576
+Reader 2 is reading book 2290
+Librarian gave to reader 3 book 1345
+Librarian gave to reader 3 book 1992
+Librarian gave to reader 3 book 3349
+Librarian is seeing reader 4
+Reader 3 is reading book 1992
+Reader 3 is reading book 3349
+Reader 3 is reading book 1345
+Librarian gave to reader 4 book 350
+Librarian gave to reader 4 book 1148
+Librarian gave to reader 4 book 4667
+Librarian is seeing reader 5
+Reader 4 is reading book 4667
+Reader 4 is reading book 1148
+Reader 3 returned book 1345
+Reader 4 is reading book 350
+Reader 3 returned book 3349
+Reader 1 returned book 3920
+Reader 3 returned book 1992
+Reader 2 returned book 4300
+Reader 2 returned book 1576
+Librarian gave to reader 5 book 3160
+Librarian gave to reader 5 book 3856
+Librarian gave to reader 5 book 4162
+Reader 5 is reading book 4162
+Reader 5 is reading book 3856
+Reader 5 is reading book 3160
+Librarian is seeing reader 6
+Reader 5 returned book 3856
+Reader 5 returned book 4162
+Librarian gave to reader 6 book 869
+Librarian gave to reader 6 book 1857
+Librarian gave to reader 6 book 2702
+Librarian is seeing reader 7
+Reader 6 is reading book 2702
+Reader 6 is reading book 1857
+Reader 6 is reading book 869
+Reader 2 returned book 2290
+Reader 4 returned book 4667
+Librarian gave to reader 7 book 1025
+Librarian gave to reader 7 book 2378
+Librarian gave to reader 7 book 2926
+Librarian is seeing reader 8
+Reader 7 is reading book 2926
+Reader 7 is reading book 1025
+Reader 7 is reading book 2378
+Reader 4 returned book 1148
+Reader 4 returned book 350
+Reader 5 returned book 3160
+Reader 7 returned book 2378
+Librarian gave to reader 8 book 2030
+Librarian gave to reader 8 book 2403
+Librarian gave to reader 8 book 3108
+Librarian is seeing reader 9
+Reader 8 is reading book 3108
+Reader 8 is reading book 2030
+Reader 8 is reading book 2403
+Reader 6 returned book 2702
+Reader 6 returned book 1857
+Reader 6 returned book 869
+Librarian gave to reader 9 book 2026
+Librarian gave to reader 9 book 3657
+Librarian gave to reader 9 book 4037
+Librarian is seeing reader 10
+Reader 9 is reading book 4037
+Reader 9 is reading book 2026
+Reader 9 is reading book 3657
+Reader 8 returned book 2030
+Reader 8 returned book 2403
+Reader 7 returned book 1025
+Reader 8 returned book 3108
+Reader 9 returned book 4037
+Librarian gave to reader 10 book 2102
+Librarian gave to reader 10 book 2166
+Librarian gave to reader 10 book 2618
+Librarian is seeing reader 11
+Reader 10 is reading book 2618
+Reader 10 is reading book 2102
+Reader 9 returned book 3657
+Reader 10 is reading book 2166
+Reader 7 returned book 2926
+Librarian gave to reader 11 book 1170
+Reader 11 is reading book 1170
+Librarian gave to reader 11 book 3789
+Librarian gave to reader 11 book 4092
+Librarian is seeing reader 12
+Reader 11 is reading book 4092
+Reader 10 returned book 2618
+Reader 11 is reading book 3789
+Reader 9 returned book 2026
+Librarian gave to reader 12 book 3157
+Librarian gave to reader 12 book 3357
+Reader 12 is reading book 3357
+Reader 11 returned book 4092
+Librarian gave to reader 12 book 4735
+Librarian is seeing reader 13
+Reader 12 is reading book 4735
+Reader 12 is reading book 3157
+Reader 10 returned book 2166
+Reader 11 returned book 3789
+Librarian gave to reader 13 book 70
+Librarian gave to reader 13 book 2371
+Librarian gave to reader 13 book 3806
+Librarian is seeing reader 14
+Reader 13 is reading book 70
+Reader 13 is reading book 3806
+Reader 13 is reading book 2371
+Reader 10 returned book 2102
+Reader 12 returned book 4735
+Librarian gave to reader 14 book 1190
+Librarian gave to reader 14 book 1206
+Reader 14 is reading book 1206
+Librarian gave to reader 14 book 2162
+Librarian is seeing reader 15
+Reader 14 is reading book 1190
+Reader 14 is reading book 2162
+Reader 13 returned book 3806
+Reader 12 returned book 3157
+Reader 14 returned book 1206
+Reader 11 returned book 1170
+Librarian gave to reader 15 book 110
+Reader 15 is reading book 110
+Librarian gave to reader 15 book 3567
+Librarian gave to reader 15 book 4830
+Librarian is seeing reader 16
+Reader 15 is reading book 4830
+Reader 15 is reading book 3567
+Reader 12 returned book 3357
+Reader 13 returned book 2371
+Librarian gave to reader 16 book 112
+Reader 16 is reading book 112
+Librarian gave to reader 16 book 2180
+Reader 16 is reading book 2180
+Librarian gave to reader 16 book 4798
+Librarian is seeing reader 17
+Reader 16 is reading book 4798
+Reader 16 returned book 2180
+Reader 13 returned book 70
+Reader 16 returned book 4798
+Librarian gave to reader 17 book 1329
+Librarian gave to reader 17 book 2953
+Reader 17 is reading book 2953
+Reader 17 is reading book 1329
+Librarian gave to reader 17 book 3505
+Librarian is seeing reader 18
+Reader 17 is reading book 3505
+Reader 15 returned book 110
+Reader 15 returned book 3567
+Reader 17 returned book 3505
+Reader 14 returned book 1190
+Reader 15 returned book 4830
+Librarian gave to reader 18 book 410
+Librarian gave to reader 18 book 655
+Librarian gave to reader 18 book 1445
+Reader 18 is reading book 1445
+Reader 18 is reading book 410
+Reader 18 is reading book 655
+Reader 14 returned book 2162
+Librarian is seeing reader 19
+Reader 17 returned book 1329
+Reader 18 returned book 410
+Librarian gave to reader 19 book 2279
+Librarian gave to reader 19 book 3100
+Reader 19 is reading book 3100
+Reader 19 is reading book 2279
+Librarian gave to reader 19 book 4557
+Librarian is seeing reader 20
+Reader 19 is reading book 4557
+Reader 16 returned book 112
+Reader 18 returned book 655
+Reader 17 returned book 2953
+Reader 19 returned book 2279
+Librarian gave to reader 20 book 1686
+Librarian gave to reader 20 book 1777
+Reader 20 is reading book 1777
+Reader 20 is reading book 1686
+Librarian gave to reader 20 book 2857
+Reader 20 is reading book 2857
+Librarian is seeing reader 21
+Reader 20 returned book 2857
+Librarian gave to reader 21 book 1944
+Librarian gave to reader 21 book 2210
+Reader 21 is reading book 2210
+Librarian gave to reader 21 book 2806
+Reader 21 is reading book 2806
+Reader 21 is reading book 1944
+Librarian is seeing reader 22
+Reader 21 returned book 2806
+Reader 19 returned book 3100
+Reader 18 returned book 1445
+Reader 21 returned book 2210
+Librarian gave to reader 22 book 1818
+Librarian gave to reader 22 book 2414
+Librarian gave to reader 22 book 4904
+Librarian is seeing reader 23
+Reader 22 is reading book 4904
+Reader 22 is reading book 2414
+Reader 22 is reading book 1818
+Reader 20 returned book 1686
+Librarian gave to reader 23 book 969
+Librarian gave to reader 23 book 3446
+Librarian gave to reader 23 book 4072
+Librarian is seeing reader 24
+Reader 23 is reading book 4072
+Reader 23 is reading book 969
+Reader 23 is reading book 3446
+Reader 19 returned book 4557
+Reader 21 returned book 1944
+Reader 20 returned book 1777
+Reader 22 returned book 1818
+Librarian gave to reader 24 book 893
+Librarian gave to reader 24 book 3107
+Librarian gave to reader 24 book 3958
+Librarian is seeing reader 25
+Reader 24 is reading book 3958
+Reader 24 is reading book 3107
+Reader 24 is reading book 893
+Reader 22 returned book 2414
+Librarian gave to reader 25 book 2114
+Librarian gave to reader 25 book 3242
+Librarian gave to reader 25 book 4098
+Librarian is seeing reader 26
+Reader 24 returned book 3958
+Reader 25 is reading book 2114
+Reader 25 is reading book 3242
+Reader 25 is reading book 4098
+Reader 23 returned book 4072
+Reader 23 returned book 3446
+Librarian gave to reader 26 book 257
+Librarian gave to reader 26 book 2756
+Librarian gave to reader 26 book 4753
+Reader 26 is reading book 4753
+Reader 26 is reading book 257
+Librarian is seeing reader 27
+Reader 26 is reading book 2756
+Reader 22 returned book 4904
+Reader 26 returned book 4753
+Librarian gave to reader 27 book 536
+Librarian gave to reader 27 book 1346
+Librarian gave to reader 27 book 3895
+Librarian is seeing reader 28
+Reader 27 is reading book 1346
+Reader 27 is reading book 3895
+Reader 27 is reading book 536
+Reader 23 returned book 969
+Reader 24 returned book 893
+Reader 25 returned book 2114
+Reader 25 returned book 3242
+Reader 25 returned book 4098
+Librarian gave to reader 28 book 143
+Librarian gave to reader 28 book 4150
+Reader 28 is reading book 4150
+Reader 27 returned book 536
+Reader 27 returned book 1346
+Librarian gave to reader 28 book 4340
+Librarian is seeing reader 29
+Reader 28 is reading book 4340
+Reader 28 is reading book 143
+Reader 28 returned book 4150
+Reader 24 returned book 3107
+Librarian gave to reader 29 book 191
+Librarian gave to reader 29 book 1584
+Librarian gave to reader 29 book 3971
+Librarian is seeing reader 30
+Reader 29 is reading book 3971
+Reader 29 is reading book 1584
+Reader 29 is reading book 191
+Reader 28 returned book 4340
+Reader 26 returned book 2756
+Reader 29 returned book 3971
+Librarian gave to reader 30 book 283
+Librarian gave to reader 30 book 546
+Reader 30 is reading book 546
+Reader 26 returned book 257
+Librarian gave to reader 30 book 1401
+Librarian is seeing reader 31
+Reader 30 is reading book 1401
+Reader 30 is reading book 283
+Reader 27 returned book 3895
+Reader 28 returned book 143
+Librarian gave to reader 31 book 540
+Librarian gave to reader 31 book 891
+Reader 31 is reading book 891
+Reader 31 is reading book 540
+Librarian gave to reader 31 book 4010
+Librarian is seeing reader 32
+Reader 31 is reading book 4010
+Reader 29 returned book 1584
+Reader 29 returned book 191
+Reader 30 returned book 546
+Reader 30 returned book 1401
+Librarian gave to reader 32 book 70
+Librarian gave to reader 32 book 634
+Librarian gave to reader 32 book 912
+Reader 32 is reading book 912
+Reader 32 is reading book 70
+Reader 32 is reading book 634
+Librarian is seeing reader 33
+Librarian gave to reader 33 book 1765
+Librarian gave to reader 33 book 2093
+Librarian gave to reader 33 book 2737
+Librarian is seeing reader 34
+Reader 33 is reading book 2737
+Reader 33 is reading book 2093
+Reader 33 is reading book 1765
+Reader 32 returned book 912
+Reader 30 returned book 283
+Reader 31 returned book 540
+Reader 31 returned book 4010
+Librarian gave to reader 34 book 1386
+Librarian gave to reader 34 book 2675
+Librarian gave to reader 34 book 4179
+Librarian is seeing reader 35
+Reader 34 is reading book 4179
+Reader 34 is reading book 1386
+Reader 34 is reading book 2675
+Reader 33 returned book 2093
+Reader 34 returned book 2675
+Reader 31 returned book 891
+Reader 32 returned book 70
+Librarian gave to reader 35 book 765
+Librarian gave to reader 35 book 2891
+Librarian gave to reader 35 book 3213
+Librarian is seeing reader 36
+Reader 32 returned book 634
+Reader 35 is reading book 2891
+Reader 35 is reading book 3213
+Reader 35 is reading book 765
+Reader 35 returned book 3213
+Reader 35 returned book 2891
+Reader 33 returned book 2737
+Librarian gave to reader 36 book 1402
+Librarian gave to reader 36 book 3810
+Librarian gave to reader 36 book 4010
+Reader 36 is reading book 3810
+Reader 36 is reading book 4010
+Reader 36 is reading book 1402
+Librarian is seeing reader 37
+Reader 33 returned book 1765
+Reader 35 returned book 765
+Reader 34 returned book 4179
+Reader 36 returned book 3810
+Librarian gave to reader 37 book 574
+Librarian gave to reader 37 book 879
+Librarian gave to reader 37 book 2904
+Librarian is seeing reader 38
+Reader 37 is reading book 879
+Reader 37 is reading book 574
+Reader 37 is reading book 2904
+Reader 34 returned book 1386
+Librarian gave to reader 38 book 1977
+Librarian gave to reader 38 book 3990
+Librarian gave to reader 38 book 4457
+Librarian is seeing reader 39
+Reader 38 is reading book 4457
+Reader 38 is reading book 1977
+Reader 38 is reading book 3990
+Reader 38 returned book 1977
+Reader 37 returned book 574
+Reader 38 returned book 4457
+Reader 37 returned book 879
+Librarian gave to reader 39 book 2446
+Librarian gave to reader 39 book 2533
+Reader 39 is reading book 2533
+Librarian gave to reader 39 book 4054
+Librarian is seeing reader 40
+Reader 39 is reading book 2446
+Reader 39 is reading book 4054
+Reader 39 returned book 2533
+Reader 39 returned book 4054
+Reader 36 returned book 4010
+Reader 37 returned book 2904
+Librarian gave to reader 40 book 822
+Librarian gave to reader 40 book 2969
+Librarian gave to reader 40 book 3266
+Librarian is seeing reader 41
+Reader 40 is reading book 3266
+Reader 40 is reading book 822
+Reader 36 returned book 1402
+Reader 40 is reading book 2969
+Reader 40 returned book 3266
+Librarian gave to reader 41 book 1246
+Librarian gave to reader 41 book 2568
+Reader 41 is reading book 2568
+Reader 41 is reading book 1246
+Librarian gave to reader 41 book 4499
+Librarian is seeing reader 42
+Reader 40 returned book 822
+Reader 41 is reading book 4499
+Reader 41 returned book 4499
+Librarian gave to reader 42 book 856
+Librarian gave to reader 42 book 3056
+Librarian gave to reader 42 book 3419
+Librarian is seeing reader 43
+Reader 38 returned book 3990
+Reader 42 is reading book 3056
+Reader 42 is reading book 856
+Reader 42 is reading book 3419
+Reader 40 returned book 2969
+Reader 42 returned book 856
+Librarian gave to reader 43 book 2224
+Librarian gave to reader 43 book 2854
+Librarian gave to reader 43 book 4230
+Librarian is seeing reader 44
+Reader 43 is reading book 4230
+Reader 42 returned book 3056
+Reader 39 returned book 2446
+Reader 43 is reading book 2224
+Reader 43 is reading book 2854
+Librarian gave to reader 44 book 1204
+Librarian gave to reader 44 book 1484
+Librarian gave to reader 44 book 4418
+Librarian is seeing reader 45
+Reader 44 is reading book 4418
+Reader 44 is reading book 1484
+Reader 44 is reading book 1204
+Reader 41 returned book 2568
+Reader 43 returned book 2854
+Librarian gave to reader 45 book 2173
+Librarian gave to reader 45 book 3034
+Librarian gave to reader 45 book 4189
+Librarian is seeing reader 46
+Reader 45 is reading book 4189
+Reader 45 is reading book 3034
+Reader 41 returned book 1246
+Reader 45 is reading book 2173
+Reader 42 returned book 3419
+Reader 44 returned book 4418
+Librarian gave to reader 46 book 1837
+Librarian gave to reader 46 book 3518
+Librarian gave to reader 46 book 4268
+Librarian is seeing reader 47
+Reader 46 is reading book 4268
+Reader 46 is reading book 1837
+Reader 45 returned book 4189
+Reader 46 is reading book 3518
+Reader 43 returned book 4230
+Reader 43 returned book 2224
+Reader 45 returned book 3034
+Librarian gave to reader 47 book 826
+Librarian gave to reader 47 book 2648
+Librarian gave to reader 47 book 2692
+Librarian is seeing reader 48
+Reader 47 is reading book 2692
+Reader 47 is reading book 2648
+Reader 47 is reading book 826
+Reader 44 returned book 1204
+Reader 44 returned book 1484
+Reader 46 returned book 4268
+Librarian gave to reader 48 book 2695
+Librarian gave to reader 48 book 3540
+Librarian gave to reader 48 book 4141
+Librarian is seeing reader 49
+Reader 48 is reading book 4141
+Reader 48 is reading book 2695
+Reader 48 is reading book 3540
+Reader 45 returned book 2173
+Reader 47 returned book 2692
+Reader 46 returned book 3518
+Librarian gave to reader 49 book 981
+Librarian gave to reader 49 book 1042
+Reader 49 is reading book 1042
+Librarian gave to reader 49 book 3036
+Librarian is seeing reader 50
+Reader 49 is reading book 3036
+Reader 49 is reading book 981
+Librarian gave to reader 50 book 1371
+Librarian gave to reader 50 book 3747
+Reader 50 is reading book 3747
+Reader 50 is reading book 1371
+Librarian gave to reader 50 book 3907
+Librarian is seeing reader 51
+Reader 48 returned book 2695
+Reader 50 is reading book 3907
+Reader 47 returned book 826
+Reader 46 returned book 1837
+Librarian gave to reader 51 book 551
+Librarian gave to reader 51 book 1172
+Librarian gave to reader 51 book 4143
+Librarian is seeing reader 52
+Reader 51 is reading book 1172
+Reader 51 is reading book 4143
+Reader 51 is reading book 551
+Reader 50 returned book 3907
+Reader 47 returned book 2648
+Reader 48 returned book 4141
+Librarian gave to reader 52 book 1758
+Librarian gave to reader 52 book 2335
+Librarian gave to reader 52 book 3866
+Librarian is seeing reader 53
+Reader 52 is reading book 2335
+Reader 52 is reading book 3866
+Reader 52 is reading book 1758
+Reader 50 returned book 1371
+Reader 48 returned book 3540
+Reader 51 returned book 551
+Reader 49 returned book 981
+Reader 51 returned book 4143
+Librarian gave to reader 53 book 2397
+Librarian gave to reader 53 book 3778
+Librarian gave to reader 53 book 3934
+Librarian is seeing reader 54
+Reader 53 is reading book 3934
+Reader 53 is reading book 3778
+Reader 53 is reading book 2397
+Reader 49 returned book 1042
+Reader 49 returned book 3036
+Reader 52 returned book 1758
+Reader 50 returned book 3747
+Reader 52 returned book 2335
+Reader 52 returned book 3866
+Librarian gave to reader 54 book 1114
+Librarian gave to reader 54 book 3909
+Reader 54 is reading book 3909
+Reader 54 is reading book 1114
+Librarian gave to reader 54 book 4707
+Librarian is seeing reader 55
+Reader 54 is reading book 4707
+Reader 51 returned book 1172
+Librarian gave to reader 55 book 4259
+Librarian gave to reader 55 book 4563
+Librarian gave to reader 55 book 4928
+Reader 55 is reading book 4928
+Reader 55 is reading book 4563
+Librarian is seeing reader 56
+Reader 55 is reading book 4259
+Reader 53 returned book 3934
+Librarian gave to reader 56 book 845
+Librarian gave to reader 56 book 2280
+Librarian gave to reader 56 book 2317
+Librarian is seeing reader 57
+Reader 56 is reading book 2317
+Reader 56 is reading book 845
+Reader 56 is reading book 2280
+Reader 53 returned book 2397
+Librarian gave to reader 57 book 774
+Librarian gave to reader 57 book 784
+Librarian gave to reader 57 book 3550
+Librarian is seeing reader 58
+Reader 57 is reading book 3550
+Reader 56 returned book 845
+Reader 57 is reading book 784
+Reader 53 returned book 3778
+Reader 57 is reading book 774
+Reader 54 returned book 3909
+Reader 54 returned book 1114
+Reader 54 returned book 4707
+Reader 55 returned book 4928
+Reader 55 returned book 4259
+Reader 57 returned book 3550
+Reader 57 returned book 784
+Reader 56 returned book 2317
+Reader 55 returned book 4563
+Librarian gave to reader 58 book 1237
+Librarian gave to reader 58 book 4443
+Librarian gave to reader 58 book 4783
+Librarian is seeing reader 59
+Reader 58 is reading book 4443
+Reader 56 returned book 2280
+Reader 58 is reading book 4783
+Reader 58 is reading book 1237
+Reader 58 returned book 1237
+Librarian gave to reader 59 book 508
+Librarian gave to reader 59 book 2467
+Librarian gave to reader 59 book 4214
+Librarian is seeing reader 60
+Reader 59 is reading book 2467
+Reader 59 is reading book 4214
+Reader 59 is reading book 508
+Reader 58 returned book 4443
+Reader 59 returned book 2467
+Librarian gave to reader 60 book 1254
+Librarian gave to reader 60 book 1418
+Librarian gave to reader 60 book 4692
+Librarian is seeing reader 61
+Reader 60 is reading book 4692
+Reader 60 is reading book 1418
+Reader 60 is reading book 1254
+Reader 59 returned book 4214
+Librarian gave to reader 61 book 1980
+Librarian gave to reader 61 book 4388
+Librarian gave to reader 61 book 4608
+Librarian is seeing reader 62
+Reader 61 is reading book 4608
+Reader 61 is reading book 1980
+Reader 57 returned book 774
+Reader 61 is reading book 4388
+Reader 59 returned book 508
+Reader 61 returned book 4608
+Reader 58 returned book 4783
+Reader 60 returned book 1418
+Librarian gave to reader 62 book 580
+Librarian gave to reader 62 book 1913
+Librarian gave to reader 62 book 4557
+Reader 62 is reading book 4557
+Reader 60 returned book 1254
+Reader 62 is reading book 1913
+Reader 62 is reading book 580
+Librarian is seeing reader 63
+Reader 61 returned book 4388
+Librarian gave to reader 63 book 1
+Librarian gave to reader 63 book 601
+Librarian gave to reader 63 book 3351
+Librarian is seeing reader 64
+Reader 63 is reading book 3351
+Reader 63 is reading book 601
+Reader 63 is reading book 1
+Reader 60 returned book 4692
+Reader 61 returned book 1980
+Librarian gave to reader 64 book 214
+Librarian gave to reader 64 book 853
+Librarian gave to reader 64 book 1849
+Librarian is seeing reader 65
+Reader 64 is reading book 1849
+Reader 64 is reading book 214
+Reader 62 returned book 4557
+Reader 64 is reading book 853
+Reader 62 returned book 1913
+Reader 64 returned book 214
+Librarian gave to reader 65 book 415
+Librarian gave to reader 65 book 1774
+Librarian gave to reader 65 book 2121
+Librarian is seeing reader 66
+Reader 65 is reading book 1774
+Reader 65 is reading book 2121
+Reader 65 is reading book 415
+Reader 63 returned book 1
+Reader 65 returned book 1774
+Reader 62 returned book 580
+Reader 63 returned book 3351
+Librarian gave to reader 66 book 1413
+Librarian gave to reader 66 book 3728
+Reader 66 is reading book 3728
+Reader 65 returned book 415
+Reader 63 returned book 601
+Librarian gave to reader 66 book 4648
+Librarian is seeing reader 67
+Reader 66 is reading book 4648
+Reader 66 is reading book 1413
+Reader 66 returned book 1413
+Librarian gave to reader 67 book 1049
+Librarian gave to reader 67 book 2178
+Librarian gave to reader 67 book 4038
+Librarian is seeing reader 68
+Reader 67 is reading book 4038
+Reader 67 is reading book 2178
+Reader 67 is reading book 1049
+Reader 64 returned book 1849
+Reader 64 returned book 853
+Reader 67 returned book 2178
+Librarian gave to reader 68 book 436
+Librarian gave to reader 68 book 1747
+Reader 68 is reading book 1747
+Librarian gave to reader 68 book 2485
+Librarian is seeing reader 69
+Reader 68 is reading book 2485
+Reader 68 is reading book 436
+Librarian gave to reader 69 book 1433
+Librarian gave to reader 69 book 1774
+Librarian gave to reader 69 book 2707
+Librarian is seeing reader 70
+Reader 65 returned book 2121
+Reader 69 is reading book 1433
+Reader 69 is reading book 1774
+Reader 69 is reading book 2707
+Reader 66 returned book 4648
+Reader 67 returned book 4038
+Reader 69 returned book 1433
+Reader 69 returned book 1774
+Reader 68 returned book 436
+Reader 66 returned book 3728
+Librarian gave to reader 70 book 1609
+Librarian gave to reader 70 book 2922
+Librarian gave to reader 70 book 3854
+Reader 70 is reading book 3854
+Reader 70 is reading book 1609
+Librarian is seeing reader 71
+Reader 70 is reading book 2922
+Reader 69 returned book 2707
+Librarian gave to reader 71 book 3326
+Librarian gave to reader 71 book 3997
+Reader 71 is reading book 3997
+Librarian gave to reader 71 book 4379
+Reader 71 is reading book 4379
+Librarian is seeing reader 72
+Reader 71 is reading book 3326
+Reader 67 returned book 1049
+Reader 68 returned book 1747
+Reader 70 returned book 3854
+Librarian gave to reader 72 book 411
+Reader 72 is reading book 411
+Librarian gave to reader 72 book 3802
+Librarian gave to reader 72 book 4942
+Librarian is seeing reader 73
+Reader 72 is reading book 4942
+Reader 68 returned book 2485
+Reader 72 is reading book 3802
+Reader 71 returned book 4379
+Librarian gave to reader 73 book 2846
+Librarian gave to reader 73 book 3025
+Librarian gave to reader 73 book 4466
+Reader 73 is reading book 4466
+Reader 73 is reading book 3025
+Librarian is seeing reader 74
+Reader 73 is reading book 2846
+Reader 71 returned book 3326
+Reader 73 returned book 4466
+Reader 70 returned book 2922
+Librarian gave to reader 74 book 1470
+Reader 74 is reading book 1470
+Librarian gave to reader 74 book 3755
+Librarian gave to reader 74 book 4751
+Librarian is seeing reader 75
+Reader 74 is reading book 3755
+Reader 74 is reading book 4751
+Reader 72 returned book 4942
+Reader 74 returned book 4751
+Reader 70 returned book 1609
+Reader 72 returned book 3802
+Librarian gave to reader 75 book 1429
+Librarian gave to reader 75 book 2694
+Librarian gave to reader 75 book 4011
+Librarian is seeing reader 76
+Reader 75 is reading book 2694
+Reader 75 is reading book 4011
+Reader 75 is reading book 1429
+Reader 74 returned book 1470
+Reader 71 returned book 3997
+Reader 74 returned book 3755
+Reader 73 returned book 3025
+Librarian gave to reader 76 book 66
+Librarian gave to reader 76 book 3360
+Librarian gave to reader 76 book 4788
+Librarian is seeing reader 77
+Reader 76 is reading book 66
+Reader 76 is reading book 3360
+Reader 73 returned book 2846
+Reader 76 is reading book 4788
+Reader 75 returned book 4011
+Reader 72 returned book 411
+Reader 75 returned book 2694
+Librarian gave to reader 77 book 1800
+Librarian gave to reader 77 book 3949
+Librarian gave to reader 77 book 4349
+Librarian is seeing reader 78
+Reader 77 is reading book 3949
+Reader 77 is reading book 4349
+Reader 77 is reading book 1800
+Reader 77 returned book 1800
+Reader 75 returned book 1429
+Reader 76 returned book 66
+Librarian gave to reader 78 book 724
+Librarian gave to reader 78 book 1880
+Librarian gave to reader 78 book 3045
+Librarian is seeing reader 79
+Reader 78 is reading book 3045
+Reader 78 is reading book 724
+Reader 77 returned book 4349
+Reader 78 is reading book 1880
+Reader 76 returned book 3360
+Librarian gave to reader 79 book 2133
+Reader 79 is reading book 2133
+Reader 78 returned book 3045
+Librarian gave to reader 79 book 4204
+Librarian gave to reader 79 book 4252
+Librarian is seeing reader 80
+Reader 79 is reading book 4204
+Reader 79 is reading book 4252
+Reader 77 returned book 3949
+Reader 76 returned book 4788
+Reader 78 returned book 724
+Reader 79 returned book 2133
+Librarian gave to reader 80 book 436
+Librarian gave to reader 80 book 3508
+Librarian gave to reader 80 book 3649
+Librarian is seeing reader 81
+Reader 80 is reading book 3649
+Reader 80 is reading book 436
+Reader 80 is reading book 3508
+Reader 79 returned book 4204
+Reader 80 returned book 3508
+Librarian gave to reader 81 book 165
+Librarian gave to reader 81 book 888
+Librarian gave to reader 81 book 1157
+Reader 81 is reading book 1157
+Reader 81 is reading book 888
+Librarian is seeing reader 82
+Reader 81 is reading book 165
+Reader 80 returned book 3649
+Librarian gave to reader 82 book 419
+Librarian gave to reader 82 book 455
+Reader 82 is reading book 455
+Librarian gave to reader 82 book 3880
+Reader 82 is reading book 3880
+Librarian is seeing reader 83
+Reader 82 is reading book 419
+Librarian gave to reader 83 book 437
+Librarian gave to reader 83 book 545
+Librarian gave to reader 83 book 927
+Reader 83 is reading book 927
+Reader 78 returned book 1880
+Librarian is seeing reader 84
+Reader 83 is reading book 437
+Reader 83 is reading book 545
+Reader 80 returned book 436
+Reader 81 returned book 888
+Reader 79 returned book 4252
+Reader 82 returned book 419
+Librarian gave to reader 84 book 1545
+Librarian gave to reader 84 book 2294
+Librarian gave to reader 84 book 2413
+Librarian is seeing reader 85
+Reader 84 is reading book 2413
+Reader 84 is reading book 2294
+Reader 84 is reading book 1545
+Reader 82 returned book 3880
+Reader 82 returned book 455
+Reader 81 returned book 165
+Reader 84 returned book 2294
+Librarian gave to reader 85 book 502
+Librarian gave to reader 85 book 1366
+Reader 85 is reading book 1366
+Reader 85 is reading book 502
+Librarian gave to reader 85 book 3320
+Librarian is seeing reader 86
+Reader 85 is reading book 3320
+Reader 83 returned book 927
+Reader 81 returned book 1157
+Reader 85 returned book 502
+Librarian gave to reader 86 book 3061
+Librarian gave to reader 86 book 4458
+Librarian gave to reader 86 book 4688
+Reader 86 is reading book 4688
+Reader 86 is reading book 3061
+Librarian is seeing reader 87
+Reader 86 is reading book 4458
+Reader 83 returned book 545
+Librarian gave to reader 87 book 792
+Librarian gave to reader 87 book 3460
+Librarian gave to reader 87 book 4062
+Reader 87 is reading book 4062
+Reader 87 is reading book 792
+Reader 87 is reading book 3460
+Librarian is seeing reader 88
+Reader 86 returned book 4688
+Reader 83 returned book 437
+Librarian gave to reader 88 book 376
+Librarian gave to reader 88 book 1527
+Librarian gave to reader 88 book 3375
+Librarian is seeing reader 89
+Reader 88 is reading book 1527
+Reader 88 is reading book 3375
+Reader 88 is reading book 376
+Reader 86 returned book 3061
+Reader 84 returned book 1545
+Reader 85 returned book 3320
+Reader 85 returned book 1366
+Reader 87 returned book 4062
+Reader 86 returned book 4458
+Reader 84 returned book 2413
+Librarian gave to reader 89 book 1791
+Librarian gave to reader 89 book 3623
+Librarian gave to reader 89 book 4919
+Librarian is seeing reader 90
+Reader 88 returned book 1527
+Reader 89 is reading book 1791
+Reader 89 is reading book 4919
+Reader 89 is reading book 3623
+Reader 87 returned book 3460
+Reader 89 returned book 4919
+Librarian gave to reader 90 book 336
+Librarian gave to reader 90 book 822
+Librarian gave to reader 90 book 3501
+Librarian is seeing reader 91
+Reader 90 is reading book 3501
+Reader 90 is reading book 336
+Reader 90 is reading book 822
+Reader 89 returned book 1791
+Reader 87 returned book 792
+Librarian gave to reader 91 book 59
+Librarian gave to reader 91 book 2871
+Librarian gave to reader 91 book 4524
+Reader 91 is reading book 4524
+Reader 91 is reading book 2871
+Librarian is seeing reader 92
+Reader 91 is reading book 59
+Librarian gave to reader 92 book 2719
+Librarian gave to reader 92 book 2983
+Librarian gave to reader 92 book 3905
+Librarian is seeing reader 93
+Reader 92 is reading book 2983
+Reader 92 is reading book 3905
+Reader 92 is reading book 2719
+Librarian gave to reader 93 book 136
+Librarian gave to reader 93 book 1799
+Librarian gave to reader 93 book 4656
+Reader 93 is reading book 4656
+Reader 93 is reading book 136
+Librarian is seeing reader 94
+Reader 90 returned book 3501
+Reader 93 is reading book 1799
+Reader 88 returned book 3375
+Reader 88 returned book 376
+Reader 89 returned book 3623
+Reader 90 returned book 822
+Reader 91 returned book 59
+Reader 91 returned book 4524
+Reader 90 returned book 336
+Librarian gave to reader 94 book 318
+Librarian gave to reader 94 book 1438
+Librarian gave to reader 94 book 2711
+Librarian is seeing reader 95
+Reader 94 is reading book 318
+Reader 94 is reading book 2711
+Reader 94 is reading book 1438
+Reader 92 returned book 3905
+Reader 93 returned book 4656
+Reader 92 returned book 2719
+Librarian gave to reader 95 book 716
+Librarian gave to reader 95 book 1225
+Librarian gave to reader 95 book 2984
+Librarian is seeing reader 96
+Reader 95 is reading book 1225
+Reader 95 is reading book 2984
+Reader 95 is reading book 716
+Reader 94 returned book 1438
+Reader 91 returned book 2871
+Librarian gave to reader 96 book 1732
+Librarian gave to reader 96 book 2121
+Reader 96 is reading book 2121
+Reader 96 is reading book 1732
+Librarian gave to reader 96 book 2229
+Librarian is seeing reader 97
+Reader 96 is reading book 2229
+Reader 92 returned book 2983
+Reader 93 returned book 1799
+Reader 96 returned book 2121
+Reader 94 returned book 318
+Librarian gave to reader 97 book 1663
+Librarian gave to reader 97 book 2037
+Reader 97 is reading book 2037
+Reader 96 returned book 2229
+Reader 97 is reading book 1663
+Reader 93 returned book 136
+Reader 94 returned book 2711
+Librarian gave to reader 97 book 2954
+Reader 97 is reading book 2954
+Librarian is seeing reader 98
+Reader 96 returned book 1732
+Reader 95 returned book 2984
+Librarian gave to reader 98 book 159
+Librarian gave to reader 98 book 1858
+Librarian gave to reader 98 book 1870
+Librarian is seeing reader 99
+Reader 98 is reading book 1858
+Reader 98 is reading book 1870
+Reader 98 is reading book 159
+Reader 97 returned book 1663
+Reader 97 returned book 2037
+Reader 95 returned book 1225
+Librarian gave to reader 99 book 2288
+Librarian gave to reader 99 book 2433
+Librarian gave to reader 99 book 4500
+Librarian is seeing reader 100
+Reader 99 is reading book 4500
+Reader 99 is reading book 2433
+Reader 99 is reading book 2288
+Reader 95 returned book 716
+Reader 98 returned book 1870
+Reader 98 returned book 1858
+Librarian gave to reader 100 book 873
+Librarian gave to reader 100 book 1065
+Librarian gave to reader 100 book 4694
+Reader 100 is reading book 4694
+Reader 97 returned book 2954
+Reader 100 is reading book 1065
+Reader 100 is reading book 873
+Reader 99 returned book 4500
+Reader 99 returned book 2433
+Reader 100 returned book 4694
+Reader 100 returned book 1065
+Reader 98 returned book 159
+Reader 99 returned book 2288
+Reader 100 returned book 873
+Library is now closed.

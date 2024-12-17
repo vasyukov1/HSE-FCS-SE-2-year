@@ -1,0 +1,36 @@
+Librarian is seeing reader 1
+Librarian gave to reader 1 book 0
+Librarian gave to reader 1 book 1
+Librarian is seeing reader 2
+Reader 1 is reading book 1
+Reader 1 is reading book 0
+Librarian gave to reader 2 book 0
+Librarian gave to reader 2 book 1
+Librarian is seeing reader 3
+Librarian gave to reader 3 book 0
+Librarian gave to reader 3 book 1
+Librarian is seeing reader 4
+Reader 1 returned book 0
+Reader 2 is reading book 0
+Librarian gave to reader 4 book 0
+Librarian gave to reader 4 book 2
+Librarian is seeing reader 5
+Reader 4 is reading book 2
+Librarian gave to reader 5 book 1
+Librarian gave to reader 5 book 2
+Reader 1 returned book 1
+Reader 2 is reading book 1
+Reader 4 returned book 2
+Reader 5 is reading book 2
+Reader 2 returned book 1
+Reader 3 is reading book 1
+Reader 2 returned book 0
+Reader 3 is reading book 0
+Reader 5 returned book 2
+Reader 3 returned book 1
+Reader 5 is reading book 1
+Reader 3 returned book 0
+Reader 4 is reading book 0
+Reader 5 returned book 1
+Reader 4 returned book 0
+Library is now closed.
