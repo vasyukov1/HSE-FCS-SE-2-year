@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fio">Васюков Александр Владимирович</string>
+    <string name="group">БПИ235</string>
+    <string name="sentText">Отправить</string>
+    <string name="userText">Здесь будет ваш текст</string>
+    <string name="inputText">Введите текст</string>
+</resources>
