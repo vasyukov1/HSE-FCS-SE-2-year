@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fio">Васюков Александр Владимирович</string>
+    <string name="group">БПИ235</string>
+    <string name="contactPhoto">Contact Photo</string>
+    <string name="contactName">Contact Name</string>
+    <string name="contactNumber">+7 123 456 78 90</string>
+    <string name="searchInput">Поиск контактов</string>
+    <string name="sadCat">Sad Cat</string>
+    <string name="noContacts">Никто не найден</string>
+</resources>
