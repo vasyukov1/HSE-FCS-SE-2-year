@@ -1,0 +1,23 @@
+<resources>
+    <style name="Base.Theme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:textColorPrimary">@color/text_light</item>
+    </style>
+
+    <style name="Theme.Light" parent="Base.Theme">
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:textColorPrimary">@color/text_light</item>
+    </style>
+
+    <color name="background">@color/material_dynamic_primary90</color>
+    <color name="text">#000000</color>
+    <color name="inversionText">#FFFFFF</color>
+
+    <style name="customButtonStyle">
+        <item name="android:backgroundTint">#FF5722</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+</resources>
