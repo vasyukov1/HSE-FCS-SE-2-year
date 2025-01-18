@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/show_hide_field"
+        android:title="Показать/Скрыть поле ввода"
+        android:checkable="true"
+        android:checked="true" />
+    <item
+        android:id="@+id/show_hide_button"
+        android:title="Показать/Скрыть кнопку"
+        android:checkable="true"
+        android:checked="true" />
+    <item
+        android:id="@+id/change_theme"
+        android:title="Сменить тему" />
+    <item
+        android:id="@+id/self_destruction"
+        android:title="Самоуничтожение"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:titleTextColor="@android:color/holo_red_dark" />
+</menu>

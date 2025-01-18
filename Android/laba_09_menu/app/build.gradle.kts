@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.vasyukov.dialog"
+    namespace = "com.vasyukov.laba_09"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.vasyukov.dialog"
+        applicationId = "com.vasyukov.laba_09"
         minSdk = 33
         targetSdk = 35
         versionCode = 1

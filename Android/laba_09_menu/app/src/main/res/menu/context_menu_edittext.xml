@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/clear_text"
+        android:title="Очистить текст" />
+    <item
+        android:id="@+id/sample_text"
+        android:title="Вставить пример текста" />
+    <item
+        android:id="@+id/copy_text"
+        android:title="Копировать текст" />
+</menu>

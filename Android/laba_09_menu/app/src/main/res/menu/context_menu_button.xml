@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/change_button_text"
+        android:title="Сменить текст кнопки" />
+    <item
+        android:id="@+id/change_button_color"
+        android:title="Сменить цвет кнопки" />
+</menu>

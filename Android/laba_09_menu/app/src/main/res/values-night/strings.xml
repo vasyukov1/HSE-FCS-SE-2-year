@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fio">Васюков Александр Владимирович</string>
+    <string name="group">БПИ235</string>
+    <string name="disco">ДИСКОТЕКА</string>
+    <string name="changeButton">ТЫК</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Menu</string>
+    <string name="fio">Васюков Александр Владимирович</string>
+    <string name="group">БПИ235</string>
+    <string name="disco">ДИСКОТЕКА</string>
+    <string name="changeButton">ТЫК</string>
+</resources>
