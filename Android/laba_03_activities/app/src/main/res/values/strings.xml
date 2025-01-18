@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Activities</string>
+    <string name="fio">Васюков Александр Владимирович</string>
+    <string name="group">БПИ235</string>
+    <string name="sentText">Отправить</string>
+    <string name="userText">Здесь будет ваш текст</string>
+    <string name="inputText">Введите текст</string>
+    <string name="userTextPrompt">На первом экране вы ввели:</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="onePage">1</string>
+    <string name="twoPage">2</string>
+</resources>

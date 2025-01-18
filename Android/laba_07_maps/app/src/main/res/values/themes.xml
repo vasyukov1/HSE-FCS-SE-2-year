@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Laba_07" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:textColorPrimary">@color/text_light</item>
+    </style>
+
+    <style name="Theme.Laba_07.Light" parent="Base.Theme.Laba_07">
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:textColorPrimary">@color/text_light</item>
+    </style>
+
+    <color name="background">@color/material_dynamic_primary90</color>
+    <color name="text">#000000</color>
+    <color name="inversionText">#FFFFFF</color>
+
+    <style name="customButton">
+        <item name="android:backgroundTint">#FF9800</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
