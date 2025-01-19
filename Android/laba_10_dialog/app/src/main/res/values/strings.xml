@@ -2,4 +2,14 @@
     <string name="app_name">Dialog</string>
     <string name="fio">Васюков Александр Владимирович</string>
     <string name="group">БПИ235</string>
+
+    <string name="edit_text_hint">Ваш ввод</string>
+    <string name="button_text">Отправить</string>
+    <string name="dialog_success_title">Супер хорошо!</string>
+    <string name="dialog_success_message">Вот тебе 10 за лабу :)</string>
+    <string name="dialog_error_title">Ошибка!</string>
+    <string name="dialog_error_message">Неверное имя :(</string>
+    <string name="dialog_button_ok">ОК</string>
+    <string name="hint">Фамилия начинается на букву М.</string>
+    <string name="question">Как зовут преподавателя по Android?</string>
 </resources>

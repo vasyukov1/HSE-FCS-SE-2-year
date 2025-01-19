@@ -44,4 +44,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/inputCode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:hint="@string/edit_text_hint"
+        android:textColorHint="@color/material_dynamic_neutral60"
+        android:autofillHints=""
+        android:background="@drawable/edittext_background"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:paddingTop="8dp"
+        android:text="@string/question"
+        android:textSize="20sp"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/inputCode"
+        app:layout_constraintEnd_toEndOf="@+id/inputCode"
+        app:layout_constraintStart_toStartOf="@+id/inputCode" />
+
+    <TextView
+        android:id="@+id/hintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="8dp"
+        android:text="@string/hint"
+        android:textSize="14sp"
+        android:textColor="#FFE200"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/inputCode"
+        app:layout_constraintEnd_toEndOf="@+id/inputCode"
+        app:layout_constraintStart_toStartOf="@+id/inputCode"/>
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="12dp"
+        android:text="@string/button_text"
+        android:elevation="10dp"
+        android:alpha="0"
+        android:backgroundTint="@color/holo_blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCode" />
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/confettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
