@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:background="@drawable/background_gradient" >
+
+    <ImageView
+        android:id="@+id/motivationalImage"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/motivational_image"
+        app:layout_constraintBottom_toTopOf="@+id/newDesireButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/newDesireButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Загадать новое желание"
+        android:backgroundTint="#FFE600"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/motivationalImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/completedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выполнено!"
+        android:backgroundTint="#FFE600"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/newDesireButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
