@@ -15,6 +15,7 @@ class HashLPTable {
     size_t size;
 
     size_t hash(int value) const;
+    void rehash();
 
 public:
     explicit HashLPTable(size_t capacity);

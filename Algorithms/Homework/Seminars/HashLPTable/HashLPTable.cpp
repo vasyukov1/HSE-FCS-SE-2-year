@@ -9,9 +9,34 @@ size_t HashLPTable::hash(int value) const {
     return value % capacity;
 }
 
+void HashLPTable::rehash() {
+    capacity *= 2;
+    std::vector<Cell> new_table(capacity);
+
+    for (int i = 0; i < capacity / 2; ++i) {
+        if (table[i].isOccupied) {
+            const int value = table[i].value;
+            const size_t key = hash(value);
+
+            int j = 0;
+            while (j < capacity) {
+                if (const size_t current_key = (key + j) % capacity;
+                    !new_table[current_key].isOccupied) {
+                    new_table[current_key].value = value;
+                    new_table[current_key].isOccupied = true;
+                    break;
+                }
+                ++j;
+            }
+        }
+    }
+
+    table = std::move(new_table);
+}
+
 bool HashLPTable::insert(int value) {
-    if (size >= capacity) {
-        return false;
+    if (size >= capacity * 3/4) {
+        rehash();
     }
 
     size_t key = hash(value);
