@@ -1,18 +1,17 @@
-package services
-
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.overmindv.models.Animal
 import org.overmindv.services.VetClinic
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-
 
 @SpringBootTest(classes = [VetClinic::class])
 class VetClinicTest {
-    val vetClinic = VetClinic()
+    @Autowired
+    lateinit var vetClinic: VetClinic
 
     @Test
-    fun testCheckHealthStatistics() {
+    fun `test check health statistics`() {
         val animal = Animal(food = 100, number = 1)
         val results = List(1000) { vetClinic.checkHealth(animal) }
         val trueCount = results.count { it }

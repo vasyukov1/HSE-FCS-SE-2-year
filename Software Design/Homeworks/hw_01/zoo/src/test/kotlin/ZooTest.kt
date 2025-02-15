@@ -1,5 +1,3 @@
-package services
-
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -13,7 +11,6 @@ import org.overmindv.services.Zoo
 
 @ExtendWith(MockitoExtension::class)
 class ZooTest {
-
     @Mock
     private lateinit var vetClinic: VetClinic
 
@@ -21,7 +18,7 @@ class ZooTest {
     private lateinit var zoo: Zoo
 
     @Test
-    fun testTotalFoodConsumption() {
+    fun `test total food consumption`() {
         val tiger = Tiger(1, 1)
         val wolf = Wolf(3, 1)
         `when`(vetClinic.checkHealth(tiger)).thenReturn(true)
@@ -34,7 +31,7 @@ class ZooTest {
     }
 
     @Test
-    fun testAddAnimalAccepted() {
+    fun `test add animal accepted`() {
         val animal = Animal(1, 1)
         `when`(vetClinic.checkHealth(animal)).thenReturn(true)
         zoo.addAnimal(animal)
@@ -45,7 +42,7 @@ class ZooTest {
     }
 
     @Test
-    fun testAddAnimalRejected() {
+    fun `test add animal rejected`() {
         val animal = Animal(1, 1)
         `when`(vetClinic.checkHealth(animal)).thenReturn(false)
         zoo.addAnimal(animal)
@@ -56,7 +53,7 @@ class ZooTest {
     }
 
     @Test
-    fun testAddThing() {
+    fun `test add thing`() {
         val table = Table(1)
         val computer = Computer(1)
         zoo.addThing(table)
@@ -68,7 +65,7 @@ class ZooTest {
     }
 
     @Test
-    fun testGetInteractiveAnimals() {
+    fun `test get interactive animals`() {
         val rabbit = Rabbit(2, 2, 0)
         val monkey = Monkey(5, 3, 7)
 
@@ -81,5 +78,4 @@ class ZooTest {
         assertTrue(zoo.getInteractiveAnimals().contains(monkey))
         assertFalse(zoo.getInteractiveAnimals().contains(rabbit))
     }
-
 }

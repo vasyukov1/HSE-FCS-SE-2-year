@@ -1,14 +1,15 @@
-package components
-
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import org.overmindv.components.InputHandler
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import kotlin.test.assertEquals
 
+@ExtendWith(MockitoExtension::class)
 class InputHandlerTest {
     private lateinit var inputHandler: InputHandler
     private lateinit var outputStream: ByteArrayOutputStream
