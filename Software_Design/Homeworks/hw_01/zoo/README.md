@@ -22,7 +22,7 @@ Functions:
 1. Download Kotlin and Gradle.
 2. Clone git repository:
    ```bash
-   git clone https://github.com/vasyukov1/HSE-FCS-SE-2-year/
+   git clone https://github.com/vasyukov1/HSE-FCS-SE-2-year
    cd HSE-FCS-SE-2-year/Software_Design/Homeworks/hw_01/zoo
     ```
 3. Build project
@@ -121,4 +121,4 @@ zoo/
    - Service `Zoo` uses `VetClinic`
    - Component `Menu` uses `Zoo`, `AnimalAdder`, `ThingAdder`, `InputHandler`, `OutputHandler`.
 
-P.S. I don't know why all tests work except `ZooTest` and `VetClinic`. :(
+P.S. I don't know why all tests work except `ZooTest` and `VetClinicTest`. :(
