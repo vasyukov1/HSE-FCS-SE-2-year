@@ -23,7 +23,7 @@ Functions:
 2. Clone git repository:
    ```bash
    git clone https://github.com/vasyukov1/HSE-FCS-SE-2-year/
-   cd "Software Design"/Homeworks/hw_01/zoo
+   cd HSE-FCS-SE-2-year/Software_Design/Homeworks/hw_01/zoo
     ```
 3. Build project
    ```bash
@@ -120,3 +120,5 @@ zoo/
    - Framework `Spring` is using for dependency transfer to construction of classes.
    - Service `Zoo` uses `VetClinic`
    - Component `Menu` uses `Zoo`, `AnimalAdder`, `ThingAdder`, `InputHandler`, `OutputHandler`.
+
+P.S. I don't know why all tests work except `ZooTest` and `VetClinic`. :(
