@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service
 @Service
 class VetClinic {
     fun checkHealth(animal: Animal): Boolean {
-        return animal.number > 3
+        return (0..10).random() > 3
     }
 }

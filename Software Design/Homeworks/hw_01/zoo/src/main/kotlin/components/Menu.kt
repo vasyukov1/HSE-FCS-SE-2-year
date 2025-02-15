@@ -1,90 +1,43 @@
 package org.overmindv.components
 
 import org.overmindv.services.Zoo
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 import kotlin.system.exitProcess
 
-class Menu(private val zoo: Zoo) {
+@Component
+class Menu @Autowired constructor(
+    private val zoo: Zoo,
+    private val animalAdder: AnimalAdder,
+    private val thingAdder: ThingAdder,
+    private val inputHandler: InputHandler,
+    private val outputHandler: OutputHandler
+) {
     fun start() {
         while (true) {
             val menu = """
-                components.Menu:
-                    1. Output total food consumption
-                    2. Add baseClasses.Animal
-                    3. Add baseClasses.Thing
-                    4. Output animals
-                    5. Output kind animals
-                    6. Output things
-                    7. Output inventory
+                Menu:
+                    1. Show total food consumption
+                    2. Add animal
+                    3. Add thing
+                    4. Show animals
+                    5. Show kind animals
+                    6. Show things
+                    7. Show inventory
                     0. Exit
             """.trimIndent()
 
             println(menu)
-
-            when (readLine()?.toIntOrNull()) {
-                1 -> zoo.totalFoodConsumption()
-                2 -> chooseAnimal()
-                3 -> chooseThing()
-                4 -> outputAnimals(zoo)
-                5 -> outputKindAnimals(zoo)
-                6 -> outputThings(zoo)
-                7 -> outputInventory(zoo)
+            when (inputHandler.readInt("Choose: ", "Invalid option.", { it in 0..7 })) {
+                1 -> println(colorize("Animals eat: ${zoo.totalFoodConsumption()} kg food per day.", Color.PURPLE))
+                2 -> animalAdder.chooseAnimal()
+                3 -> thingAdder.addThing()
+                4 -> outputHandler.outputAnimals()
+                5 -> outputHandler.outputKindAnimals()
+                6 -> outputHandler.outputThings()
+                7 -> outputHandler.outputInventory()
                 0 -> exitProcess(0)
-                else -> println("Invalid option")
             }
         }
-    }
-
-    private fun chooseAnimal() {
-        val chooseAnimalMenu = """
-        Choose baseClasses.Animal:
-            1. animalTypesClasses.Herbo
-            2. animalTypesClasses.Predator
-            0. Back
-    """.trimIndent()
-
-        println(chooseAnimalMenu)
-
-        val animalTypeChoose = readLine()?.toIntOrNull()
-        if (animalTypeChoose == 1) {
-            addHerbo()
-        } else if (animalTypeChoose == 2) {
-            addPredator()
-        } else if (animalTypeChoose == 0) {
-            start()
-        } else {
-            println("Input is incorrect.")
-        }
-
-    }
-
-    private fun addHerbo() {
-
-    }
-
-    private fun addPredator() {
-
-    }
-
-    private fun chooseThing() {
-
-    }
-
-    private fun outputAnimals(zoo: Zoo) {
-        println("List of animals in zoo:")
-        zoo.getAnimals().forEach {
-            println(it)
-        }
-    }
-
-    private fun outputKindAnimals(zoo: Zoo) {
-
-    }
-
-    private fun outputThings(zoo: Zoo) {
-
-    }
-
-    private fun outputInventory(zoo: Zoo) {
-        zoo.inventoryReport()
     }
 }
