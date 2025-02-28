@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "703415905245",
+    "firebase_url": "https://laba-16-firebase-default-rtdb.firebaseio.com",
+    "project_id": "laba-16-firebase",
+    "storage_bucket": "laba-16-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703415905245:android:045fd0c3d3bf210c836434",
+        "android_client_info": {
+          "package_name": "com.vasyukov.laba_16_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703415905245-dj7p3nkrhukgk0vn36hpvqup706og1v0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vasyukov.laba_16_firebase",
+            "certificate_hash": "80a6cafcd0467e659f53d6d07965938098d54e2e"
+          }
+        },
+        {
+          "client_id": "703415905245-tphic4til4fllnon4d03qrblru2clu6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBevQTpMuRMkz1fAy3ljNxsC_cd9N9AVN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703415905245-tphic4til4fllnon4d03qrblru2clu6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

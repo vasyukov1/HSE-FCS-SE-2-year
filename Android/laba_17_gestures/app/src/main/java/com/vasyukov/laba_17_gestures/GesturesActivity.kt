@@ -40,7 +40,7 @@ class GesturesActivity : AppCompatActivity(), GestureDetector.OnGestureListener,
             setTextColor(Color.BLACK)
             layoutParams = FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
+                ViewGroup.LayoutParams.WRAP_CONTENT,
             ).apply {
                 setMargins(50, 50, 50, 50)
             }
