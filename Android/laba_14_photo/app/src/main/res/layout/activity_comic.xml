@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mini Comics"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp" />
+
+    <LinearLayout
+        android:id="@+id/comicLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Первый кадр"
+                android:textSize="14sp"
+                android:background="@android:color/white"
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Второй кадр"
+                android:textSize="14sp"
+                android:background="@android:color/white"
+                android:padding="4dp"
+                android:layout_marginRight="8dp"/>
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Третий кадр"
+                android:textSize="14sp"
+                android:background="@android:color/white"
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveComicButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

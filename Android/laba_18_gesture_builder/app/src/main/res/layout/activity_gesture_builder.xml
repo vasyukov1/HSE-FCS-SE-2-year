@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/gestureOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gestureStrokeWidth="5"
+        android:eventsInterceptionEnabled="true"
+        android:fadeEnabled="false"/>
+
+    <TextView
+        android:id="@+id/gestureInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Выполните жест"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gestureOverlay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
