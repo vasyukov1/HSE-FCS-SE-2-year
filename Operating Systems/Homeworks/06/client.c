@@ -2,62 +2,46 @@
 #include <stdlib.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
-#include <unistd.h>
+#include <sys/sem.h>
 #include <signal.h>
+#include <unistd.h>
+#include <time.h>
 
-#define MEM_SIZE 1024  // Размер сегмента разделяемой памяти
+#define SHM_KEY 1234
+#define SEM_KEY 5678
+#define SHM_SIZE sizeof(shared_data_t)
 
-// Структура для хранения случайных чисел
-struct shared_memory {
-    int numbers[10];
-};
+typedef struct {
+    int number;
+    int ready;
+} shared_data_t;
 
-void cleanup(int shmid) {
-    // Отсоединяем сегмент разделяемой памяти
-    if (shmctl(shmid, IPC_RMID, NULL) == -1) {
-        perror("shmctl");
-    } else {
-        printf("Сегмент разделяемой памяти удалён.\n");
-    }
+int shm_id;
+shared_data_t *shm_ptr;
+
+void cleanup(int signum) {
+    printf("\nКлиент завершает работу...\n");
+    shmdt(shm_ptr);
+    exit(0);
 }
 
 int main() {
-    // Генерация уникального ключа для разделяемой памяти
-    key_t key = ftok("server.c", 1);
-    if (key == -1) {
-        perror("ftok");
-        exit(1);
-    }
+    signal(SIGINT, cleanup);
 
-    // Получаем идентификатор сегмента разделяемой памяти
-    int shmid = shmget(key, sizeof(struct shared_memory), 0666);
-    if (shmid == -1) {
-        perror("shmget");
-        exit(1);
-    }
+    shm_id = shmget(SHM_KEY, SHM_SIZE, 0666);
+    shm_ptr = (shared_data_t *)shmat(shm_id, NULL, 0);
 
-    // Прикрепляем сегмент разделяемой памяти
-    struct shared_memory* shm_ptr = (struct shared_memory*)shmat(shmid, NULL, 0);
-    if (shm_ptr == (void*)-1) {
-        perror("shmat");
-        exit(1);
+    srand(time(NULL));
+    
+    while (1) {
+        if (!shm_ptr->ready) {
+            int num = rand() % 1000;
+            shm_ptr->number = num;
+            shm_ptr->ready = 1;
+            printf("Отправлено число: %d\n", num);
+        }
+        sleep(1);
     }
-
-    // Чтение и вывод случайных чисел из разделяемой памяти
-    printf("Чтение случайных чисел с сервера:\n");
-    for (int i = 0; i < 10; i++) {
-        printf("%d ", shm_ptr->numbers[i]);
-    }
-    printf("\n");
-
-    // Отсоединяем разделяемую память
-    if (shmdt(shm_ptr) == -1) {
-        perror("shmdt");
-        exit(1);
-    }
-
-    // Завершаем работу сервера
-    printf("Клиент завершил работу.\n");
 
     return 0;
 }
