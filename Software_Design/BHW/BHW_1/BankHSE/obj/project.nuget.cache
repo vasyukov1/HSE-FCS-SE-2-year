@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "f+5YCyWQNCY=",
+  "success": true,
+  "projectFilePath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj",
+  "expectedPackageFiles": [
+    "/Users/alexvasyukov/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.3/microsoft.extensions.dependencyinjection.9.0.3.nupkg.sha512",
+    "/Users/alexvasyukov/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.3/microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
+    "/Users/alexvasyukov/.nuget/packages/yamldotnet/15.1.2/yamldotnet.15.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,1 @@
+{"Accounts":[{"Id":1,"Name":"Dasha","Balance":100}],"Operations":[{"Id":1,"Type":0,"AccountIdFrom":1,"AccountIdTo":2,"Amount":50,"Date":"2025-03-20T22:26:11.350264+03:00","Description":"Test","CategoryId":1}],"Categories":[{"Id":1,"Name":"Food","Type":1}]}

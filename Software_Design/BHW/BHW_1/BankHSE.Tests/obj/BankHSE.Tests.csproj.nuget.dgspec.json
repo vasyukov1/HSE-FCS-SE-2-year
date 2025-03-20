@@ -1,0 +1,172 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE.Tests/BankHSE.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE.Tests/BankHSE.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE.Tests/BankHSE.Tests.csproj",
+        "projectName": "BankHSE.Tests",
+        "projectPath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE.Tests/BankHSE.Tests.csproj",
+        "packagesPath": "/Users/alexvasyukov/.nuget/packages/",
+        "outputPath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/alexvasyukov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj": {
+                "projectPath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "coverlet.msbuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj",
+        "projectName": "BankHSE",
+        "projectPath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/BankHSE.csproj",
+        "packagesPath": "/Users/alexvasyukov/.nuget/packages/",
+        "outputPath": "/Users/alexvasyukov/Documents/GitHub/HSE-FCS-SE-2-year/Software_Design/BHW/BHW_1/BankHSE/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/alexvasyukov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[15.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

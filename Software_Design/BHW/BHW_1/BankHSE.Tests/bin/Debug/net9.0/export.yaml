@@ -1,0 +1,17 @@
+accounts:
+- id: 1
+  name: Dasha
+  balance: 100
+operations:
+- id: 1
+  type: Income
+  accountIdFrom: 1
+  accountIdTo: 2
+  amount: 50
+  date: 2025-03-20T23:04:02.6643550+03:00
+  description: Test
+  categoryId: 1
+categories:
+- id: 1
+  name: Food
+  type: Expense
