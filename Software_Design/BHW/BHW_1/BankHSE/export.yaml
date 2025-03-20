@@ -1,0 +1,23 @@
+accounts:
+- id: 9774
+  name: Alex
+  balance: 800
+- id: 3353
+  name: Dasha
+  balance: 1545
+- id: 4169
+  name: Agil
+  balance: 43
+operations:
+- id: 3673
+  type: Expense
+  accountIdFrom: 9774
+  accountIdTo: 3353
+  amount: 200
+  date: 2025-03-20T23:22:01.4903350+03:00
+  description: на футбол
+  categoryId: 93
+categories:
+- id: 93
+  name: Football
+  type: Expense

@@ -1,17 +1,5 @@
-accounts:
-- id: 1
-  name: Dasha
-  balance: 100
-operations:
-- id: 1
-  type: Income
-  accountIdFrom: 1
-  accountIdTo: 2
-  amount: 50
-  date: 2025-03-20T23:04:02.6643550+03:00
-  description: Test
-  categoryId: 1
-categories:
-- id: 1
-  name: Food
-  type: Expense
+Account,1,Dasha,100
+Operation,1,50,3/20/2025 11:43:53 PM,Test,1,2,1,Income
+Category,1,Food,Expense
+
+Export Time: 3/20/2025 11:43:53 PM
