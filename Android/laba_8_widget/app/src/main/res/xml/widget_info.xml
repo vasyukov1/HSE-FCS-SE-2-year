@@ -1,0 +1,7 @@
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="200dp"
+    android:minHeight="200dp"
+    android:updatePeriodMillis="86400000"
+    android:initialLayout="@layout/layout_widget"
+    android:configure="com.vasyukov.laba_8_widget.WidgetConfigActivity" />
