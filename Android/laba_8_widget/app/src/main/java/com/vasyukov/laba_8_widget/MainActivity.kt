@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            val intent = Intent(this, WidgetActivity::class.java)
+            val intent = Intent(this, WidgetConfigActivity::class.java)
 
             AnimatorSet().apply {
                 playTogether(fadeOutAvatar, moveFioDown, moveGroupDown)

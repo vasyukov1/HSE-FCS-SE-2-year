@@ -1,7 +1,8 @@
-<appwidget-provider
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="200dp"
-    android:minHeight="200dp"
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
     android:updatePeriodMillis="86400000"
-    android:initialLayout="@layout/layout_widget"
-    android:configure="com.vasyukov.laba_8_widget.WidgetConfigActivity" />
+    android:initialLayout="@layout/widget_layout"
+    android:configure="com.vasyukov.laba_8_widget.WidgetConfigActivity"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen" />
