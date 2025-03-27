@@ -1,0 +1,15 @@
+<resources>
+    <!-- Основные цвета -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <!-- Акцентные цвета -->
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="accent">#03DAC6</color>
+
+    <!-- Для галереи -->
+    <color name="selected_thumbnail">#B8FF0D</color>
+    <color name="thumbnail_border">#4DFFFFFF</color>
+</resources>
