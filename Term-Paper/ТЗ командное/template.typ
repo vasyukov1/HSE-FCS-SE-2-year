@@ -4,8 +4,6 @@
     assert(cfg.project.code != none)
     assert(cfg.project.name != none)
     assert(cfg.students != none)
-    // assert(cfg.student.name != none)
-    // assert(cfg.student.group != none)
     assert(cfg.agreed_by.name != none)
     assert(cfg.agreed_by.position != none)
     assert(cfg.approved_by.name != none)
@@ -13,7 +11,6 @@
     assert(cfg.university_name != none)
     assert(cfg.faculty_name != none)
     assert(cfg.edu_program_name != none)
-    // assert(cfg.city != none)
     assert(cfg.year != none)
 
     let un(n) = "_" * n
