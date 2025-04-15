@@ -1,23 +1,20 @@
 package main
 
 import (
-	"fmt"
-	"hw_02/internal/domain/animal"
-	"time"
+	"github.com/gin-gonic/gin"
+	"hw_02/internal/application/services"
+	"hw_02/internal/infrastructure/storage"
+	"hw_02/internal/presentation/controller"
 )
 
 func main() {
-	gender, _ := animal.NewGender("male")
-	foodType, _ := animal.NewFoodType("meat")
+	r := gin.Default()
 
-	a, err := animal.NewAnimal("1", "Lion", "Simba", time.Now(), gender, foodType)
-	if err != nil {
-		fmt.Println("Error creating animal:", err)
-		return
-	}
+	repo := storage.NewInMemoryAnimalRepository()
+	service := services.NewAnimalService(repo)
+	animalController := controller.NewAnimalController(service)
 
-	fmt.Printf("Animal created: %s (%s)\n", a.Name(), a.Species())
+	animalController.RegisterRoutes(r)
 
-	a.MakeSick()
-	fmt.Printf("Animal is sick: %v\n", !a.HealthStatus().IsHealthy())
+	_ = r.Run(":8080")
 }
