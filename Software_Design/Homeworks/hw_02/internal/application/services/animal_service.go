@@ -7,25 +7,25 @@ import (
 )
 
 type AnimalService struct {
-	repo interfaces.AnimalRepository
+	animalInterface interfaces.AnimalInterface
 }
 
-func NewAnimalService(repo interfaces.AnimalRepository) *AnimalService {
-	return &AnimalService{repo: repo}
+func NewAnimalService(animalInterface interfaces.AnimalInterface) *AnimalService {
+	return &AnimalService{animalInterface: animalInterface}
 }
 
 func (s *AnimalService) SaveAnimal(ctx context.Context, a *animal.Animal) error {
-	return s.repo.SaveAnimal(ctx, a)
+	return s.animalInterface.SaveAnimal(ctx, a)
 }
 
 func (s *AnimalService) GetAllAnimals(ctx context.Context) ([]*animal.Animal, error) {
-	return s.repo.GetAllAnimals(ctx)
+	return s.animalInterface.GetAllAnimals(ctx)
 }
 
 func (s *AnimalService) GetAnimalByID(ctx context.Context, id animal.AnimalID) (*animal.Animal, error) {
-	return s.repo.GetAnimalByID(ctx, id)
+	return s.animalInterface.GetAnimalByID(ctx, id)
 }
 
 func (s *AnimalService) DeleteAnimal(ctx context.Context, id animal.AnimalID) error {
-	return s.repo.DeleteAnimal(ctx, id)
+	return s.animalInterface.DeleteAnimal(ctx, id)
 }

@@ -7,18 +7,18 @@ import (
 	"sync"
 )
 
-type InMemoryAnimalRepository struct {
+type AnimalRepository struct {
 	mu      sync.RWMutex
 	storage map[animal.AnimalID]*animal.Animal
 }
 
-func NewInMemoryAnimalRepository() *InMemoryAnimalRepository {
-	return &InMemoryAnimalRepository{
+func NewAnimalRepository() *AnimalRepository {
+	return &AnimalRepository{
 		storage: make(map[animal.AnimalID]*animal.Animal),
 	}
 }
 
-func (repo *InMemoryAnimalRepository) SaveAnimal(ctx context.Context, a *animal.Animal) error {
+func (repo *AnimalRepository) SaveAnimal(ctx context.Context, a *animal.Animal) error {
 	repo.mu.Lock()
 	defer repo.mu.Unlock()
 
@@ -26,7 +26,7 @@ func (repo *InMemoryAnimalRepository) SaveAnimal(ctx context.Context, a *animal.
 	return nil
 }
 
-func (repo *InMemoryAnimalRepository) GetAllAnimals(ctx context.Context) ([]*animal.Animal, error) {
+func (repo *AnimalRepository) GetAllAnimals(ctx context.Context) ([]*animal.Animal, error) {
 	repo.mu.RLock()
 	defer repo.mu.RUnlock()
 
@@ -37,7 +37,7 @@ func (repo *InMemoryAnimalRepository) GetAllAnimals(ctx context.Context) ([]*ani
 	return animals, nil
 }
 
-func (repo *InMemoryAnimalRepository) GetAnimalByID(ctx context.Context, id animal.AnimalID) (*animal.Animal, error) {
+func (repo *AnimalRepository) GetAnimalByID(ctx context.Context, id animal.AnimalID) (*animal.Animal, error) {
 	repo.mu.RLock()
 	defer repo.mu.RUnlock()
 
@@ -48,7 +48,7 @@ func (repo *InMemoryAnimalRepository) GetAnimalByID(ctx context.Context, id anim
 	return a, nil
 }
 
-func (repo *InMemoryAnimalRepository) DeleteAnimal(ctx context.Context, id animal.AnimalID) error {
+func (repo *AnimalRepository) DeleteAnimal(ctx context.Context, id animal.AnimalID) error {
 	repo.mu.Lock()
 	defer repo.mu.Unlock()
 

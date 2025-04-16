@@ -1,7 +1,6 @@
 package animal
 
 type AnimalID string
-type EnclosureID string
 
 type Species string
 

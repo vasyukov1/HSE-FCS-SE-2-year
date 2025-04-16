@@ -10,11 +10,15 @@ import (
 func main() {
 	r := gin.Default()
 
-	repo := storage.NewInMemoryAnimalRepository()
-	service := services.NewAnimalService(repo)
-	animalController := controller.NewAnimalController(service)
-
+	animalRepo := storage.NewAnimalRepository()
+	animalService := services.NewAnimalService(animalRepo)
+	animalController := controller.NewAnimalController(animalService)
 	animalController.RegisterRoutes(r)
+
+	enclosureRepo := storage.NewEnclosureRepository()
+	enclosureService := services.NewEnclosureService(enclosureRepo, animalRepo)
+	enclosureController := controller.NewEnclosureController(enclosureService)
+	enclosureController.RegisterRoutes(r)
 
 	_ = r.Run(":8080")
 }

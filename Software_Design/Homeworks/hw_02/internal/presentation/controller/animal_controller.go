@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"hw_02/internal/application/interfaces"
+	"hw_02/internal/application/services"
 	"hw_02/internal/domain/animal"
 	"hw_02/internal/presentation/dto"
 	"net/http"
@@ -10,10 +10,10 @@ import (
 )
 
 type AnimalController struct {
-	service interfaces.AnimalRepository
+	service *services.AnimalService
 }
 
-func NewAnimalController(service interfaces.AnimalRepository) *AnimalController {
+func NewAnimalController(service *services.AnimalService) *AnimalController {
 	return &AnimalController{service: service}
 }
 
@@ -52,6 +52,7 @@ func (ac *AnimalController) CreateAnimal(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid gender"})
 		return
 	}
+
 	food, err := animal.NewFoodType(req.Food)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid food type"})
