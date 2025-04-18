@@ -4,14 +4,15 @@ import "hw_02/internal/domain/animal"
 
 func MapAnimalToResponse(a *animal.Animal) AnimalResponse {
 	return AnimalResponse{
-		ID:           string(a.ID()),
-		Species:      a.Species(),
-		Name:         a.Name(),
-		BirthDate:    a.BirthDate(),
-		Gender:       string(a.Gender()),
-		Food:         string(a.Food()),
-		HealthStatus: string(a.HealthStatus()),
-		EnclosureID:  string(a.EnclosureId()),
+		ID:                string(a.ID()),
+		Species:           a.Species(),
+		Name:              a.Name(),
+		BirthDate:         a.BirthDate(),
+		Gender:            string(a.Gender()),
+		Food:              string(a.Food()),
+		FeedingScheduleID: a.FeedingScheduleID(),
+		HealthStatus:      string(a.HealthStatus()),
+		EnclosureID:       a.EnclosureId(),
 	}
 }
 

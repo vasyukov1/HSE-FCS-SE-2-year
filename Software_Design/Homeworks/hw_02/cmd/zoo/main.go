@@ -20,5 +20,10 @@ func main() {
 	enclosureController := controller.NewEnclosureController(enclosureService)
 	enclosureController.RegisterRoutes(r)
 
+	feedingRepo := storage.NewFeedingRepository()
+	feedingService := services.NewFeedingService(feedingRepo, animalRepo)
+	feedingController := controller.NewFeedingController(feedingService)
+	feedingController.RegisterRoutes(r)
+
 	_ = r.Run(":8080")
 }

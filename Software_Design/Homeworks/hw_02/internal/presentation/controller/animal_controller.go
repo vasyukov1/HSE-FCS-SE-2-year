@@ -30,12 +30,13 @@ func (ac *AnimalController) RegisterRoutes(r *gin.Engine) {
 // === Request DTO ===
 
 type AnimalRequest struct {
-	ID        animal.AnimalID `json:"id"`
-	Species   string          `json:"species"`
-	Name      string          `json:"name"`
-	BirthDate time.Time       `json:"birth_date"`
-	Gender    string          `json:"gender"`
-	Food      string          `json:"food"`
+	ID                animal.AnimalID `json:"id"`
+	Species           string          `json:"species"`
+	Name              string          `json:"name"`
+	BirthDate         time.Time       `json:"birth_date"`
+	Gender            string          `json:"gender"`
+	Food              string          `json:"food"`
+	FeedingScheduleID string          `json:"feeding_schedule_id"`
 }
 
 // === Handlers ===
