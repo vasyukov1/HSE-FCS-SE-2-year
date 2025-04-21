@@ -1,6 +1,8 @@
 package dto
 
-import "hw_02/internal/domain/animal"
+import (
+	"hw_02/internal/domain/animal"
+)
 
 func MapAnimalToResponse(a *animal.Animal) AnimalResponse {
 	return AnimalResponse{
@@ -9,7 +11,7 @@ func MapAnimalToResponse(a *animal.Animal) AnimalResponse {
 		Name:              a.Name(),
 		BirthDate:         a.BirthDate(),
 		Gender:            string(a.Gender()),
-		Food:              string(a.Food()),
+		Feed:              a.Food(),
 		FeedingScheduleID: a.FeedingScheduleID(),
 		HealthStatus:      string(a.HealthStatus()),
 		EnclosureID:       a.EnclosureId(),

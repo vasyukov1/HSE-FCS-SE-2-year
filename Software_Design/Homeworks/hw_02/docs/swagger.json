@@ -1,0 +1,1085 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the Swagger documentation for the Zoo project",
+        "title": "Zoo API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/animals": {
+            "get": {
+                "description": "Возвращает всех зарегистрированных животных",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Получить список животных",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/dto.AnimalResponse"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Добавляет новое животное",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Создать животное",
+                "parameters": [
+                    {
+                        "description": "Животное",
+                        "name": "animal",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dto.AnimalRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/animals/{id}": {
+            "get": {
+                "description": "Возвращает одно животное по идентификатору",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Получить животное по ID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Animal ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.AnimalResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Удаляет животное по ID",
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Удалить животное",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Animal ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/animals/{id}/feed": {
+            "put": {
+                "description": "Кормит животное определённой едой и сохраняет время кормления",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Покормить животное",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID животного",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Информация о кормлении",
+                        "name": "feed",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dto.FeedRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/animals/{id}/heal": {
+            "put": {
+                "description": "Изменяет статус здоровья животного на \"healthy\" по его ID",
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Вылечить животное",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID животного",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/animals/{id}/hungry": {
+            "put": {
+                "description": "Помечает животное как голодное и очищает последнее время кормления",
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Сделать животное голодным",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID животного",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/animals/{id}/seek": {
+            "put": {
+                "description": "Изменяет статус здоровья животного на \"sick\" по его ID",
+                "tags": [
+                    "animals"
+                ],
+                "summary": "Отметить животное как больное",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID животного",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enclosures": {
+            "get": {
+                "description": "Возвращает все вольеры",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "enclosures"
+                ],
+                "summary": "Получить список всех вольеров",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/dto.EnclosureResponse"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Добавляет новый вольер в систему",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "enclosures"
+                ],
+                "summary": "Создать вольер",
+                "parameters": [
+                    {
+                        "description": "Вольер",
+                        "name": "enclosure",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.EnclosureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enclosures/{id}": {
+            "get": {
+                "description": "Возвращает вольер по идентификатору",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "enclosures"
+                ],
+                "summary": "Получить вольер по ID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Enclosure ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.EnclosureResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Удаляет вольер по ID",
+                "tags": [
+                    "enclosures"
+                ],
+                "summary": "Удалить вольер",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Enclosure ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enclosures/{id}/add/{animal_id}": {
+            "post": {
+                "description": "Привязывает животное к указанному вольеру",
+                "tags": [
+                    "enclosures"
+                ],
+                "summary": "Добавить животное в вольер",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Enclosure ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Animal ID",
+                        "name": "animal_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feeding": {
+            "get": {
+                "description": "Возвращает список всех кормлений",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Получить все расписания кормлений",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/dto.FeedingResponse"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Добавляет новое расписание кормления для животного",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Создать расписание кормления",
+                "parameters": [
+                    {
+                        "description": "Расписание кормления",
+                        "name": "feeding",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.FeedingRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feeding/animal/{animal_id}": {
+            "get": {
+                "description": "Возвращает расписание кормления по ID животного",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Получить расписание по животному",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Animal ID",
+                        "name": "animal_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.FeedingResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feeding/{id}": {
+            "get": {
+                "description": "Возвращает одно расписание кормления",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Получить расписание по ID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Feeding ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.FeedingResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Обновляет время и тип еды для заданного расписания",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Изменить расписание кормления",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Feeding ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Новое значение",
+                        "name": "feeding",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controller.EditFeedingRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Удаляет кормление по ID",
+                "tags": [
+                    "feeding"
+                ],
+                "summary": "Удалить расписание кормления",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Feeding ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/stats": {
+            "get": {
+                "description": "Просто возвращает сообщение-заглушку",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "stats"
+                ],
+                "summary": "Заглушка статистики",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/stats/animals": {
+            "get": {
+                "description": "Возвращает сводную информацию о животных: здоровье, пол, наличие вольера",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "stats"
+                ],
+                "summary": "Получить статистику по животным",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.StatsResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.EditFeedingRequest": {
+            "type": "object",
+            "properties": {
+                "new_food": {
+                    "type": "string"
+                },
+                "new_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.EnclosureRequest": {
+            "type": "object",
+            "properties": {
+                "capacity": {
+                    "type": "integer"
+                },
+                "enclosure_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.FeedingRequest": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
+                    "type": "string"
+                },
+                "food": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.AnimalRequest": {
+            "type": "object",
+            "properties": {
+                "birth_date": {
+                    "type": "string"
+                },
+                "feed": {
+                    "type": "boolean"
+                },
+                "feeding_schedule_id": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "species": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.AnimalResponse": {
+            "type": "object",
+            "properties": {
+                "birth_date": {
+                    "type": "string"
+                },
+                "enclosure_id": {
+                    "type": "string"
+                },
+                "feed": {
+                    "type": "boolean"
+                },
+                "feeding_schedule_id": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "health_status": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "species": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.EnclosureResponse": {
+            "type": "object",
+            "properties": {
+                "animals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "capacity": {
+                    "type": "integer"
+                },
+                "enclosure_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.FeedRequest": {
+            "type": "object",
+            "properties": {
+                "feeding_time": {
+                    "type": "string"
+                },
+                "food": {
+                    "$ref": "#/definitions/feeding.FoodType"
+                }
+            }
+        },
+        "dto.FeedingResponse": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
+                    "type": "string"
+                },
+                "food": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.StatsResponse": {
+            "type": "object",
+            "properties": {
+                "animal_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "count_female": {
+                    "type": "integer"
+                },
+                "count_healthy": {
+                    "type": "integer"
+                },
+                "count_male": {
+                    "type": "integer"
+                },
+                "count_seek": {
+                    "type": "integer"
+                },
+                "female_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "healthy_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "male_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sick_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                },
+                "with_enclosure": {
+                    "type": "integer"
+                },
+                "with_enclosure_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "without_enclosure": {
+                    "type": "integer"
+                },
+                "without_enclosure_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "feeding.FoodType": {
+            "type": "string",
+            "enum": [
+                "meat",
+                "plants",
+                "fish",
+                "fruit"
+            ],
+            "x-enum-varnames": [
+                "Meat",
+                "Plants",
+                "Fish",
+                "Fruit"
+            ]
+        }
+    }
+}

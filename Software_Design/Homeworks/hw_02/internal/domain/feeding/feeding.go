@@ -2,17 +2,16 @@ package feeding
 
 import (
 	"errors"
-	"hw_02/internal/domain/animal"
 )
 
 type Feeding struct {
 	id       ScheduleID
 	animalID string
 	time     string
-	food     animal.FoodType
+	food     FoodType
 }
 
-func NewFeeding(id ScheduleID, animalID string, time string, food animal.FoodType) (*Feeding, error) {
+func NewFeeding(id ScheduleID, animalID string, time string, food FoodType) (*Feeding, error) {
 	if food == "" {
 		return nil, errors.New("invalid food type")
 	}
@@ -24,7 +23,15 @@ func NewFeeding(id ScheduleID, animalID string, time string, food animal.FoodTyp
 	}, nil
 }
 
-func (fs *Feeding) ID() ScheduleID        { return fs.id }
-func (fs *Feeding) AnimalID() string      { return fs.animalID }
-func (fs *Feeding) Time() string          { return fs.time }
-func (fs *Feeding) Food() animal.FoodType { return fs.food }
+func (f *Feeding) EditTime(newTime string) {
+	f.time = newTime
+}
+
+func (f *Feeding) EditFood(newFood FoodType) {
+	f.food = newFood
+}
+
+func (f *Feeding) ID() ScheduleID   { return f.id }
+func (f *Feeding) AnimalID() string { return f.animalID }
+func (f *Feeding) Time() string     { return f.time }
+func (f *Feeding) Food() FoodType   { return f.food }

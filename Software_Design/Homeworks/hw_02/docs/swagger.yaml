@@ -1,0 +1,718 @@
+basePath: /
+definitions:
+  controller.EditFeedingRequest:
+    properties:
+      new_food:
+        type: string
+      new_time:
+        type: string
+    type: object
+  controller.EnclosureRequest:
+    properties:
+      capacity:
+        type: integer
+      enclosure_type:
+        type: string
+      id:
+        type: string
+    type: object
+  controller.FeedingRequest:
+    properties:
+      animal_id:
+        type: string
+      food:
+        type: string
+      id:
+        type: string
+      time:
+        type: string
+    type: object
+  dto.AnimalRequest:
+    properties:
+      birth_date:
+        type: string
+      feed:
+        type: boolean
+      feeding_schedule_id:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      species:
+        type: string
+    type: object
+  dto.AnimalResponse:
+    properties:
+      birth_date:
+        type: string
+      enclosure_id:
+        type: string
+      feed:
+        type: boolean
+      feeding_schedule_id:
+        type: string
+      gender:
+        type: string
+      health_status:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      species:
+        type: string
+    type: object
+  dto.EnclosureResponse:
+    properties:
+      animals:
+        items:
+          type: string
+        type: array
+      capacity:
+        type: integer
+      enclosure_type:
+        type: string
+      id:
+        type: string
+    type: object
+  dto.FeedRequest:
+    properties:
+      feeding_time:
+        type: string
+      food:
+        $ref: '#/definitions/feeding.FoodType'
+    type: object
+  dto.FeedingResponse:
+    properties:
+      animal_id:
+        type: string
+      food:
+        type: string
+      id:
+        type: string
+      time:
+        type: string
+    type: object
+  dto.StatsResponse:
+    properties:
+      animal_ids:
+        items:
+          type: string
+        type: array
+      count_female:
+        type: integer
+      count_healthy:
+        type: integer
+      count_male:
+        type: integer
+      count_seek:
+        type: integer
+      female_ids:
+        items:
+          type: string
+        type: array
+      healthy_ids:
+        items:
+          type: string
+        type: array
+      male_ids:
+        items:
+          type: string
+        type: array
+      sick_ids:
+        items:
+          type: string
+        type: array
+      total:
+        type: integer
+      with_enclosure:
+        type: integer
+      with_enclosure_ids:
+        items:
+          type: string
+        type: array
+      without_enclosure:
+        type: integer
+      without_enclosure_ids:
+        items:
+          type: string
+        type: array
+    type: object
+  feeding.FoodType:
+    enum:
+    - meat
+    - plants
+    - fish
+    - fruit
+    type: string
+    x-enum-varnames:
+    - Meat
+    - Plants
+    - Fish
+    - Fruit
+host: localhost:8080
+info:
+  contact: {}
+  description: This is the Swagger documentation for the Zoo project
+  title: Zoo API
+  version: "1.0"
+paths:
+  /animals:
+    get:
+      description: Возвращает всех зарегистрированных животных
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.AnimalResponse'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить список животных
+      tags:
+      - animals
+    post:
+      consumes:
+      - application/json
+      description: Добавляет новое животное
+      parameters:
+      - description: Животное
+        in: body
+        name: animal
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AnimalRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Создать животное
+      tags:
+      - animals
+  /animals/{id}:
+    delete:
+      description: Удаляет животное по ID
+      parameters:
+      - description: Animal ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Удалить животное
+      tags:
+      - animals
+    get:
+      description: Возвращает одно животное по идентификатору
+      parameters:
+      - description: Animal ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AnimalResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить животное по ID
+      tags:
+      - animals
+  /animals/{id}/feed:
+    put:
+      consumes:
+      - application/json
+      description: Кормит животное определённой едой и сохраняет время кормления
+      parameters:
+      - description: ID животного
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Информация о кормлении
+        in: body
+        name: feed
+        required: true
+        schema:
+          $ref: '#/definitions/dto.FeedRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Покормить животное
+      tags:
+      - animals
+  /animals/{id}/heal:
+    put:
+      description: Изменяет статус здоровья животного на "healthy" по его ID
+      parameters:
+      - description: ID животного
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Вылечить животное
+      tags:
+      - animals
+  /animals/{id}/hungry:
+    put:
+      description: Помечает животное как голодное и очищает последнее время кормления
+      parameters:
+      - description: ID животного
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Сделать животное голодным
+      tags:
+      - animals
+  /animals/{id}/seek:
+    put:
+      description: Изменяет статус здоровья животного на "sick" по его ID
+      parameters:
+      - description: ID животного
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Отметить животное как больное
+      tags:
+      - animals
+  /enclosures:
+    get:
+      description: Возвращает все вольеры
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.EnclosureResponse'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить список всех вольеров
+      tags:
+      - enclosures
+    post:
+      consumes:
+      - application/json
+      description: Добавляет новый вольер в систему
+      parameters:
+      - description: Вольер
+        in: body
+        name: enclosure
+        required: true
+        schema:
+          $ref: '#/definitions/controller.EnclosureRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Создать вольер
+      tags:
+      - enclosures
+  /enclosures/{id}:
+    delete:
+      description: Удаляет вольер по ID
+      parameters:
+      - description: Enclosure ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Удалить вольер
+      tags:
+      - enclosures
+    get:
+      description: Возвращает вольер по идентификатору
+      parameters:
+      - description: Enclosure ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.EnclosureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить вольер по ID
+      tags:
+      - enclosures
+  /enclosures/{id}/add/{animal_id}:
+    post:
+      description: Привязывает животное к указанному вольеру
+      parameters:
+      - description: Enclosure ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Animal ID
+        in: path
+        name: animal_id
+        required: true
+        type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Добавить животное в вольер
+      tags:
+      - enclosures
+  /feeding:
+    get:
+      description: Возвращает список всех кормлений
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.FeedingResponse'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить все расписания кормлений
+      tags:
+      - feeding
+    post:
+      consumes:
+      - application/json
+      description: Добавляет новое расписание кормления для животного
+      parameters:
+      - description: Расписание кормления
+        in: body
+        name: feeding
+        required: true
+        schema:
+          $ref: '#/definitions/controller.FeedingRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Создать расписание кормления
+      tags:
+      - feeding
+  /feeding/{id}:
+    delete:
+      description: Удаляет кормление по ID
+      parameters:
+      - description: Feeding ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Удалить расписание кормления
+      tags:
+      - feeding
+    get:
+      description: Возвращает одно расписание кормления
+      parameters:
+      - description: Feeding ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FeedingResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить расписание по ID
+      tags:
+      - feeding
+    put:
+      consumes:
+      - application/json
+      description: Обновляет время и тип еды для заданного расписания
+      parameters:
+      - description: Feeding ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Новое значение
+        in: body
+        name: feeding
+        required: true
+        schema:
+          $ref: '#/definitions/controller.EditFeedingRequest'
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Изменить расписание кормления
+      tags:
+      - feeding
+  /feeding/animal/{animal_id}:
+    get:
+      description: Возвращает расписание кормления по ID животного
+      parameters:
+      - description: Animal ID
+        in: path
+        name: animal_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FeedingResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить расписание по животному
+      tags:
+      - feeding
+  /stats:
+    get:
+      description: Просто возвращает сообщение-заглушку
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Заглушка статистики
+      tags:
+      - stats
+  /stats/animals:
+    get:
+      description: 'Возвращает сводную информацию о животных: здоровье, пол, наличие
+        вольера'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.StatsResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Получить статистику по животным
+      tags:
+      - stats
+swagger: "2.0"

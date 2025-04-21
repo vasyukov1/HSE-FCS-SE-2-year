@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"hw_02/internal/application/services"
+	"hw_02/internal/application/interfaces"
 	"hw_02/internal/domain/animal"
 	"hw_02/internal/domain/enclosure"
 	"hw_02/internal/presentation/dto"
@@ -10,10 +10,10 @@ import (
 )
 
 type EnclosureController struct {
-	service *services.EnclosureService
+	service interfaces.EnclosureServiceInterface
 }
 
-func NewEnclosureController(service *services.EnclosureService) *EnclosureController {
+func NewEnclosureController(service interfaces.EnclosureServiceInterface) *EnclosureController {
 	return &EnclosureController{service: service}
 }
 
@@ -38,6 +38,17 @@ type EnclosureRequest struct {
 
 // === Handlers ===
 
+// CreateEnclosure godoc
+// @Summary Создать вольер
+// @Description Добавляет новый вольер в систему
+// @Tags enclosures
+// @Accept json
+// @Produce json
+// @Param enclosure body controller.EnclosureRequest true "Вольер"
+// @Success 201 {object} map[string]string
+// @Failure 400 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /enclosures [post]
 func (ec *EnclosureController) CreateEnclosure(c *gin.Context) {
 	var req EnclosureRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -66,6 +77,14 @@ func (ec *EnclosureController) CreateEnclosure(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{"message": "enclosure created"})
 }
 
+// GetAllEnclosures godoc
+// @Summary Получить список всех вольеров
+// @Description Возвращает все вольеры
+// @Tags enclosures
+// @Produce json
+// @Success 200 {array} dto.EnclosureResponse
+// @Failure 500 {object} map[string]string
+// @Router /enclosures [get]
 func (ec *EnclosureController) GetAllEnclosures(c *gin.Context) {
 	enclosures, err := ec.service.GetAllEnclosure(c)
 	if err != nil {
@@ -75,6 +94,15 @@ func (ec *EnclosureController) GetAllEnclosures(c *gin.Context) {
 	c.JSON(http.StatusOK, dto.MapEnclosuresToResponseList(enclosures))
 }
 
+// GetEnclosureByID godoc
+// @Summary Получить вольер по ID
+// @Description Возвращает вольер по идентификатору
+// @Tags enclosures
+// @Produce json
+// @Param id path string true "Enclosure ID"
+// @Success 200 {object} dto.EnclosureResponse
+// @Failure 500 {object} map[string]string
+// @Router /enclosures/{id} [get]
 func (ec *EnclosureController) GetEnclosureByID(c *gin.Context) {
 	id := enclosure.EnclosureID(c.Param("id"))
 
@@ -86,6 +114,14 @@ func (ec *EnclosureController) GetEnclosureByID(c *gin.Context) {
 	c.JSON(http.StatusOK, dto.MapEnclosureToResponse(e))
 }
 
+// DeleteEnclosure godoc
+// @Summary Удалить вольер
+// @Description Удаляет вольер по ID
+// @Tags enclosures
+// @Param id path string true "Enclosure ID"
+// @Success 200 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /enclosures/{id} [delete]
 func (ec *EnclosureController) DeleteEnclosure(c *gin.Context) {
 	id := enclosure.EnclosureID(c.Param("id"))
 
@@ -97,6 +133,15 @@ func (ec *EnclosureController) DeleteEnclosure(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "enclosure deleted"})
 }
 
+// AddAnimalToEnclosure godoc
+// @Summary Добавить животное в вольер
+// @Description Привязывает животное к указанному вольеру
+// @Tags enclosures
+// @Param id path string true "Enclosure ID"
+// @Param animal_id path string true "Animal ID"
+// @Success 201 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /enclosures/{id}/add/{animal_id} [post]
 func (ec *EnclosureController) AddAnimalToEnclosure(c *gin.Context) {
 	enclosureID := enclosure.EnclosureID(c.Param("id"))
 	animalID := animal.AnimalID(c.Param("animal_id"))

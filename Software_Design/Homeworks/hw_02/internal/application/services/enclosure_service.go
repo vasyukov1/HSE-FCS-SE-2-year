@@ -7,17 +7,25 @@ import (
 	"hw_02/internal/application/interfaces"
 	"hw_02/internal/domain/animal"
 	"hw_02/internal/domain/enclosure"
+	"hw_02/internal/domain/events"
+	"time"
 )
 
 type EnclosureService struct {
 	enclosureInterface interfaces.EnclosureInterface
 	animalInterface    interfaces.AnimalInterface
+	eventDispatcher    events.EventDispatcher
 }
 
-func NewEnclosureService(enclosureInterface interfaces.EnclosureInterface, animalInterface interfaces.AnimalInterface) *EnclosureService {
+func NewEnclosureService(
+	enclosureInterface interfaces.EnclosureInterface,
+	animalInterface interfaces.AnimalInterface,
+	eventDispatcher events.EventDispatcher,
+) *EnclosureService {
 	return &EnclosureService{
 		enclosureInterface: enclosureInterface,
 		animalInterface:    animalInterface,
+		eventDispatcher:    eventDispatcher,
 	}
 }
 
@@ -60,11 +68,28 @@ func (s *EnclosureService) AddAnimalToEnclosure(ctx context.Context, enclosureID
 		}
 	}
 
+	if len(e.GetAnimals()) == e.Capacity() {
+		return errors.New("enclosure is full")
+	}
+
 	if err := e.AddAnimalToEnclosure(animalID); err != nil {
 		return errors.New("cannot add animal to enclosure")
 	}
 
 	a.MoveToEnclosure(string(enclosureID))
+
+	oldEID := enclosure.EnclosureID("")
+	if oldE != nil {
+		oldEID = oldE.ID()
+	}
+	event := events.AnimalMovedEvent{
+		AnimalID:     animalID,
+		OldEnclosure: oldEID,
+		NewEnclosure: e.ID(),
+		MovedAt:      time.Now(),
+	}
+
+	s.eventDispatcher.Dispatch(event)
 
 	if err := s.animalInterface.SaveAnimal(ctx, a); err != nil {
 		return errors.New("failed to save animal")
