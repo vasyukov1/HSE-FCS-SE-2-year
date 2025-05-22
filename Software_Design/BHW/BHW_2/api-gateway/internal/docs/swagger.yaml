@@ -1,0 +1,149 @@
+basePath: /
+definitions:
+  domain.AnalyzedData:
+    properties:
+      character_count:
+        type: integer
+      image_url:
+        type: string
+      paragraph_count:
+        type: integer
+      word_count:
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: Gateway for file upload, download, analysis and getting word cloud
+  title: API Gateway
+  version: "1.0"
+paths:
+  /analysis:
+    get:
+      description: Starts analysis of the file with the given ID
+      parameters:
+      - description: File ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Analysis result
+          schema:
+            $ref: '#/definitions/domain.AnalyzedData'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal analysis error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Analyze file
+      tags:
+      - analysis
+  /download:
+    get:
+      description: Downloads the file with the given ID from the file storage service
+      parameters:
+      - description: File ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: File content
+          schema:
+            type: file
+        "400":
+          description: Missing or invalid ID
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "502":
+          description: Failed to fetch file from storage
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Download file
+      tags:
+      - files
+  /get:
+    get:
+      description: Returns result (e.g., word cloud image) of the analysis for the
+        given file ID
+      parameters:
+      - description: File ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - image/png
+      responses:
+        "200":
+          description: Analysis result
+          schema:
+            type: file
+        "400":
+          description: Missing or invalid ID
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "502":
+          description: Failed to contact analysis service
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get analysis result
+      tags:
+      - analysis
+  /upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Uploads a .txt file to the file storage service
+      parameters:
+      - description: Text file (.txt) to upload
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: File uploaded successfully with returned ID
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid input or file
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "502":
+          description: Failed to forward file to storage service
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Upload file
+      tags:
+      - files
+swagger: "2.0"

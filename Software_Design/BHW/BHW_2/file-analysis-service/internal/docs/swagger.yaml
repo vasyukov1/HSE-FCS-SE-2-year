@@ -1,0 +1,74 @@
+basePath: /
+definitions:
+  domain.AnalyzeRequest:
+    properties:
+      id:
+        type: string
+    type: object
+host: localhost:8082
+info:
+  contact: {}
+  description: This is a service for analyzing text files and generating word cloud
+    images.
+  title: File Analysis API
+  version: "1.0"
+paths:
+  /analysis:
+    post:
+      consumes:
+      - application/json
+      description: Generates word cloud image from text file by ID
+      parameters:
+      - description: File ID
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.AnalyzeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid JSON
+          schema:
+            type: string
+        "500":
+          description: Internal error
+          schema:
+            type: string
+      summary: Analyze file
+      tags:
+      - analysis
+  /get:
+    get:
+      description: Returns generated image file for a given ID
+      parameters:
+      - description: File ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+        "400":
+          description: Invalid ID
+          schema:
+            type: string
+        "404":
+          description: Not found
+          schema:
+            type: string
+      summary: Get analysis result
+      tags:
+      - analysis
+swagger: "2.0"
