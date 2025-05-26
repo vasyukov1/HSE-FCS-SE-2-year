@@ -54,7 +54,7 @@ swag init -g cmd/app/main.go -o internal/docs
 
 Документацию Swagger можно посмотреть по ссылке `http://localhost:<PORT>/swagger/index.html`, где `<PORT>` - порт микросервиса.
 
-Запуск с помощью Docker Compose:
+### Запуск Docker Compose:
 ```bash
 docker-compose up --build
 ```

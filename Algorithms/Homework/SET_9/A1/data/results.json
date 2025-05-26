@@ -1,0 +1,2750 @@
+{
+  "merge_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 723,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1537,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2742,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 3816,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 5085,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 5988,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 7137,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 8377,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 9353,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 10549,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 12839,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 14354,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 15727,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 17193,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 18398,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 20137,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 21322,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 22444,
+        "size": 1800,
+        "time": 1
+      },
+      {
+        "comparisons": 24032,
+        "size": 1900,
+        "time": 1
+      },
+      {
+        "comparisons": 25602,
+        "size": 2000,
+        "time": 1
+      },
+      {
+        "comparisons": 26808,
+        "size": 2100,
+        "time": 2
+      },
+      {
+        "comparisons": 28297,
+        "size": 2200,
+        "time": 2
+      },
+      {
+        "comparisons": 29870,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 30621,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 32522,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 33586,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 35176,
+        "size": 2700,
+        "time": 2
+      },
+      {
+        "comparisons": 36605,
+        "size": 2800,
+        "time": 2
+      },
+      {
+        "comparisons": 37798,
+        "size": 2900,
+        "time": 2
+      },
+      {
+        "comparisons": 38560,
+        "size": 3000,
+        "time": 2
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 2015,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 4027,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 4730,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 5870,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 7099,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 8352,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 9916,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 11308,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 12751,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 14398,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 15435,
+        "size": 1100,
+        "time": 1
+      },
+      {
+        "comparisons": 16643,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 18256,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 19849,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 21254,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 22899,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 24509,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 26148,
+        "size": 1800,
+        "time": 2
+      },
+      {
+        "comparisons": 27744,
+        "size": 1900,
+        "time": 2
+      },
+      {
+        "comparisons": 29476,
+        "size": 2000,
+        "time": 2
+      },
+      {
+        "comparisons": 31065,
+        "size": 2100,
+        "time": 2
+      },
+      {
+        "comparisons": 32948,
+        "size": 2200,
+        "time": 2
+      },
+      {
+        "comparisons": 34612,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 36342,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 38125,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 40009,
+        "size": 2600,
+        "time": 3
+      },
+      {
+        "comparisons": 41742,
+        "size": 2700,
+        "time": 3
+      },
+      {
+        "comparisons": 43801,
+        "size": 2800,
+        "time": 3
+      },
+      {
+        "comparisons": 45620,
+        "size": 2900,
+        "time": 3
+      },
+      {
+        "comparisons": 47428,
+        "size": 3000,
+        "time": 3
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 679,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1872,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2334,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 3316,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 4381,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 5705,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 7057,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 8547,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 10063,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 11935,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 10962,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 10786,
+        "size": 1200,
+        "time": 0
+      },
+      {
+        "comparisons": 12052,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 13162,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 14005,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 15354,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 16589,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 17947,
+        "size": 1800,
+        "time": 1
+      },
+      {
+        "comparisons": 19185,
+        "size": 1900,
+        "time": 1
+      },
+      {
+        "comparisons": 20233,
+        "size": 2000,
+        "time": 1
+      },
+      {
+        "comparisons": 21602,
+        "size": 2100,
+        "time": 1
+      },
+      {
+        "comparisons": 23262,
+        "size": 2200,
+        "time": 1
+      },
+      {
+        "comparisons": 24749,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 26287,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 27820,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 29043,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 30778,
+        "size": 2700,
+        "time": 2
+      },
+      {
+        "comparisons": 32571,
+        "size": 2800,
+        "time": 2
+      },
+      {
+        "comparisons": 34092,
+        "size": 2900,
+        "time": 2
+      },
+      {
+        "comparisons": 35563,
+        "size": 3000,
+        "time": 2
+      }
+    ]
+  },
+  "msd_radix_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 0,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1800,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1900,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2000,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2100,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2200,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2700,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2800,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2900,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 3000,
+        "time": 2
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 0,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1200,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1800,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1900,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2000,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2100,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2200,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2500,
+        "time": 3
+      },
+      {
+        "comparisons": 0,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2700,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2800,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2900,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 3000,
+        "time": 2
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 0,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1200,
+        "time": 0
+      },
+      {
+        "comparisons": 0,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1800,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 1900,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2000,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2100,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2200,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2300,
+        "time": 1
+      },
+      {
+        "comparisons": 0,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2700,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2800,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 2900,
+        "time": 2
+      },
+      {
+        "comparisons": 0,
+        "size": 3000,
+        "time": 2
+      }
+    ]
+  },
+  "quick_msd_radix_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 643,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1239,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 1921,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 2556,
+        "size": 400,
+        "time": 1
+      },
+      {
+        "comparisons": 3277,
+        "size": 500,
+        "time": 1
+      },
+      {
+        "comparisons": 3910,
+        "size": 600,
+        "time": 1
+      },
+      {
+        "comparisons": 4554,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 5310,
+        "size": 800,
+        "time": 2
+      },
+      {
+        "comparisons": 5951,
+        "size": 900,
+        "time": 2
+      },
+      {
+        "comparisons": 6660,
+        "size": 1000,
+        "time": 2
+      },
+      {
+        "comparisons": 7512,
+        "size": 1100,
+        "time": 3
+      },
+      {
+        "comparisons": 8147,
+        "size": 1200,
+        "time": 3
+      },
+      {
+        "comparisons": 8838,
+        "size": 1300,
+        "time": 3
+      },
+      {
+        "comparisons": 9532,
+        "size": 1400,
+        "time": 4
+      },
+      {
+        "comparisons": 10180,
+        "size": 1500,
+        "time": 4
+      },
+      {
+        "comparisons": 10912,
+        "size": 1600,
+        "time": 4
+      },
+      {
+        "comparisons": 11680,
+        "size": 1700,
+        "time": 4
+      },
+      {
+        "comparisons": 12311,
+        "size": 1800,
+        "time": 5
+      },
+      {
+        "comparisons": 13071,
+        "size": 1900,
+        "time": 7
+      },
+      {
+        "comparisons": 13825,
+        "size": 2000,
+        "time": 5
+      },
+      {
+        "comparisons": 14553,
+        "size": 2100,
+        "time": 6
+      },
+      {
+        "comparisons": 15247,
+        "size": 2200,
+        "time": 6
+      },
+      {
+        "comparisons": 15967,
+        "size": 2300,
+        "time": 6
+      },
+      {
+        "comparisons": 16620,
+        "size": 2400,
+        "time": 7
+      },
+      {
+        "comparisons": 17289,
+        "size": 2500,
+        "time": 7
+      },
+      {
+        "comparisons": 17938,
+        "size": 2600,
+        "time": 7
+      },
+      {
+        "comparisons": 18889,
+        "size": 2700,
+        "time": 8
+      },
+      {
+        "comparisons": 19633,
+        "size": 2800,
+        "time": 8
+      },
+      {
+        "comparisons": 20355,
+        "size": 2900,
+        "time": 8
+      },
+      {
+        "comparisons": 21058,
+        "size": 3000,
+        "time": 8
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 1308,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 2144,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2397,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 2841,
+        "size": 400,
+        "time": 1
+      },
+      {
+        "comparisons": 3363,
+        "size": 500,
+        "time": 1
+      },
+      {
+        "comparisons": 3992,
+        "size": 600,
+        "time": 1
+      },
+      {
+        "comparisons": 4665,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 5251,
+        "size": 800,
+        "time": 2
+      },
+      {
+        "comparisons": 6037,
+        "size": 900,
+        "time": 2
+      },
+      {
+        "comparisons": 6794,
+        "size": 1000,
+        "time": 2
+      },
+      {
+        "comparisons": 7596,
+        "size": 1100,
+        "time": 3
+      },
+      {
+        "comparisons": 8678,
+        "size": 1200,
+        "time": 3
+      },
+      {
+        "comparisons": 9507,
+        "size": 1300,
+        "time": 4
+      },
+      {
+        "comparisons": 10328,
+        "size": 1400,
+        "time": 4
+      },
+      {
+        "comparisons": 11117,
+        "size": 1500,
+        "time": 4
+      },
+      {
+        "comparisons": 11936,
+        "size": 1600,
+        "time": 5
+      },
+      {
+        "comparisons": 13083,
+        "size": 1700,
+        "time": 5
+      },
+      {
+        "comparisons": 13973,
+        "size": 1800,
+        "time": 5
+      },
+      {
+        "comparisons": 14856,
+        "size": 1900,
+        "time": 6
+      },
+      {
+        "comparisons": 15701,
+        "size": 2000,
+        "time": 6
+      },
+      {
+        "comparisons": 16726,
+        "size": 2100,
+        "time": 6
+      },
+      {
+        "comparisons": 17950,
+        "size": 2200,
+        "time": 8
+      },
+      {
+        "comparisons": 19100,
+        "size": 2300,
+        "time": 8
+      },
+      {
+        "comparisons": 20114,
+        "size": 2400,
+        "time": 8
+      },
+      {
+        "comparisons": 20985,
+        "size": 2500,
+        "time": 8
+      },
+      {
+        "comparisons": 21770,
+        "size": 2600,
+        "time": 8
+      },
+      {
+        "comparisons": 23255,
+        "size": 2700,
+        "time": 9
+      },
+      {
+        "comparisons": 24122,
+        "size": 2800,
+        "time": 10
+      },
+      {
+        "comparisons": 25238,
+        "size": 2900,
+        "time": 10
+      },
+      {
+        "comparisons": 26757,
+        "size": 3000,
+        "time": 10
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 636,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1316,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2013,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 2739,
+        "size": 400,
+        "time": 1
+      },
+      {
+        "comparisons": 3422,
+        "size": 500,
+        "time": 1
+      },
+      {
+        "comparisons": 4124,
+        "size": 600,
+        "time": 1
+      },
+      {
+        "comparisons": 4820,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 5524,
+        "size": 800,
+        "time": 2
+      },
+      {
+        "comparisons": 6176,
+        "size": 900,
+        "time": 2
+      },
+      {
+        "comparisons": 6909,
+        "size": 1000,
+        "time": 2
+      },
+      {
+        "comparisons": 7575,
+        "size": 1100,
+        "time": 3
+      },
+      {
+        "comparisons": 8467,
+        "size": 1200,
+        "time": 3
+      },
+      {
+        "comparisons": 8980,
+        "size": 1300,
+        "time": 3
+      },
+      {
+        "comparisons": 9674,
+        "size": 1400,
+        "time": 4
+      },
+      {
+        "comparisons": 10433,
+        "size": 1500,
+        "time": 4
+      },
+      {
+        "comparisons": 11119,
+        "size": 1600,
+        "time": 4
+      },
+      {
+        "comparisons": 11792,
+        "size": 1700,
+        "time": 4
+      },
+      {
+        "comparisons": 12634,
+        "size": 1800,
+        "time": 5
+      },
+      {
+        "comparisons": 13325,
+        "size": 1900,
+        "time": 5
+      },
+      {
+        "comparisons": 14055,
+        "size": 2000,
+        "time": 5
+      },
+      {
+        "comparisons": 14740,
+        "size": 2100,
+        "time": 6
+      },
+      {
+        "comparisons": 15600,
+        "size": 2200,
+        "time": 6
+      },
+      {
+        "comparisons": 16382,
+        "size": 2300,
+        "time": 6
+      },
+      {
+        "comparisons": 17047,
+        "size": 2400,
+        "time": 6
+      },
+      {
+        "comparisons": 17868,
+        "size": 2500,
+        "time": 7
+      },
+      {
+        "comparisons": 18548,
+        "size": 2600,
+        "time": 7
+      },
+      {
+        "comparisons": 19288,
+        "size": 2700,
+        "time": 8
+      },
+      {
+        "comparisons": 19984,
+        "size": 2800,
+        "time": 8
+      },
+      {
+        "comparisons": 20650,
+        "size": 2900,
+        "time": 8
+      },
+      {
+        "comparisons": 21426,
+        "size": 3000,
+        "time": 8
+      }
+    ]
+  },
+  "quick_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 1537,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 3465,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 4700,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 6647,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 9035,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 10075,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 12017,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 14179,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 16170,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 18478,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 19762,
+        "size": 1100,
+        "time": 1
+      },
+      {
+        "comparisons": 21252,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 24202,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 25965,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 26371,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 30011,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 29851,
+        "size": 1700,
+        "time": 1
+      },
+      {
+        "comparisons": 34438,
+        "size": 1800,
+        "time": 2
+      },
+      {
+        "comparisons": 36422,
+        "size": 1900,
+        "time": 2
+      },
+      {
+        "comparisons": 38207,
+        "size": 2000,
+        "time": 2
+      },
+      {
+        "comparisons": 40553,
+        "size": 2100,
+        "time": 2
+      },
+      {
+        "comparisons": 42575,
+        "size": 2200,
+        "time": 2
+      },
+      {
+        "comparisons": 45057,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 47555,
+        "size": 2400,
+        "time": 2
+      },
+      {
+        "comparisons": 48107,
+        "size": 2500,
+        "time": 2
+      },
+      {
+        "comparisons": 50412,
+        "size": 2600,
+        "time": 2
+      },
+      {
+        "comparisons": 54665,
+        "size": 2700,
+        "time": 3
+      },
+      {
+        "comparisons": 57123,
+        "size": 2800,
+        "time": 3
+      },
+      {
+        "comparisons": 55192,
+        "size": 2900,
+        "time": 3
+      },
+      {
+        "comparisons": 36438,
+        "size": 3000,
+        "time": 1
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 2663,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 6049,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 6653,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 7775,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 9439,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 11241,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 12390,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 14547,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 16304,
+        "size": 900,
+        "time": 1
+      },
+      {
+        "comparisons": 18628,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 20078,
+        "size": 1100,
+        "time": 1
+      },
+      {
+        "comparisons": 21970,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 23829,
+        "size": 1300,
+        "time": 1
+      },
+      {
+        "comparisons": 26100,
+        "size": 1400,
+        "time": 1
+      },
+      {
+        "comparisons": 28197,
+        "size": 1500,
+        "time": 1
+      },
+      {
+        "comparisons": 30795,
+        "size": 1600,
+        "time": 1
+      },
+      {
+        "comparisons": 32468,
+        "size": 1700,
+        "time": 2
+      },
+      {
+        "comparisons": 33554,
+        "size": 1800,
+        "time": 2
+      },
+      {
+        "comparisons": 35875,
+        "size": 1900,
+        "time": 2
+      },
+      {
+        "comparisons": 39457,
+        "size": 2000,
+        "time": 2
+      },
+      {
+        "comparisons": 40444,
+        "size": 2100,
+        "time": 2
+      },
+      {
+        "comparisons": 43187,
+        "size": 2200,
+        "time": 2
+      },
+      {
+        "comparisons": 45296,
+        "size": 2300,
+        "time": 2
+      },
+      {
+        "comparisons": 48638,
+        "size": 2400,
+        "time": 3
+      },
+      {
+        "comparisons": 48439,
+        "size": 2500,
+        "time": 3
+      },
+      {
+        "comparisons": 53237,
+        "size": 2600,
+        "time": 3
+      },
+      {
+        "comparisons": 54729,
+        "size": 2700,
+        "time": 3
+      },
+      {
+        "comparisons": 56426,
+        "size": 2800,
+        "time": 3
+      },
+      {
+        "comparisons": 58688,
+        "size": 2900,
+        "time": 3
+      },
+      {
+        "comparisons": 61354,
+        "size": 3000,
+        "time": 3
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 514,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 958,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 1390,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 1835,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 2311,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 2683,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 3113,
+        "size": 700,
+        "time": 0
+      },
+      {
+        "comparisons": 3519,
+        "size": 800,
+        "time": 0
+      },
+      {
+        "comparisons": 3947,
+        "size": 900,
+        "time": 0
+      },
+      {
+        "comparisons": 4369,
+        "size": 1000,
+        "time": 0
+      },
+      {
+        "comparisons": 4797,
+        "size": 1100,
+        "time": 0
+      },
+      {
+        "comparisons": 5292,
+        "size": 1200,
+        "time": 0
+      },
+      {
+        "comparisons": 5857,
+        "size": 1300,
+        "time": 0
+      },
+      {
+        "comparisons": 6276,
+        "size": 1400,
+        "time": 0
+      },
+      {
+        "comparisons": 6856,
+        "size": 1500,
+        "time": 0
+      },
+      {
+        "comparisons": 7106,
+        "size": 1600,
+        "time": 0
+      },
+      {
+        "comparisons": 7566,
+        "size": 1700,
+        "time": 0
+      },
+      {
+        "comparisons": 8024,
+        "size": 1800,
+        "time": 0
+      },
+      {
+        "comparisons": 8497,
+        "size": 1900,
+        "time": 0
+      },
+      {
+        "comparisons": 8902,
+        "size": 2000,
+        "time": 0
+      },
+      {
+        "comparisons": 9295,
+        "size": 2100,
+        "time": 0
+      },
+      {
+        "comparisons": 9813,
+        "size": 2200,
+        "time": 0
+      },
+      {
+        "comparisons": 10287,
+        "size": 2300,
+        "time": 0
+      },
+      {
+        "comparisons": 10645,
+        "size": 2400,
+        "time": 0
+      },
+      {
+        "comparisons": 11267,
+        "size": 2500,
+        "time": 0
+      },
+      {
+        "comparisons": 11581,
+        "size": 2600,
+        "time": 0
+      },
+      {
+        "comparisons": 12006,
+        "size": 2700,
+        "time": 0
+      },
+      {
+        "comparisons": 12418,
+        "size": 2800,
+        "time": 0
+      },
+      {
+        "comparisons": 12874,
+        "size": 2900,
+        "time": 0
+      },
+      {
+        "comparisons": 13284,
+        "size": 3000,
+        "time": 0
+      }
+    ]
+  },
+  "string_merge_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 807,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1818,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2988,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 4153,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 5436,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 6742,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 8089,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 9548,
+        "size": 800,
+        "time": 1
+      },
+      {
+        "comparisons": 10615,
+        "size": 900,
+        "time": 1
+      },
+      {
+        "comparisons": 11837,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 13820,
+        "size": 1100,
+        "time": 1
+      },
+      {
+        "comparisons": 15315,
+        "size": 1200,
+        "time": 2
+      },
+      {
+        "comparisons": 16811,
+        "size": 1300,
+        "time": 2
+      },
+      {
+        "comparisons": 18362,
+        "size": 1400,
+        "time": 2
+      },
+      {
+        "comparisons": 19529,
+        "size": 1500,
+        "time": 2
+      },
+      {
+        "comparisons": 21387,
+        "size": 1600,
+        "time": 2
+      },
+      {
+        "comparisons": 22765,
+        "size": 1700,
+        "time": 3
+      },
+      {
+        "comparisons": 23887,
+        "size": 1800,
+        "time": 3
+      },
+      {
+        "comparisons": 25555,
+        "size": 1900,
+        "time": 3
+      },
+      {
+        "comparisons": 26803,
+        "size": 2000,
+        "time": 3
+      },
+      {
+        "comparisons": 28153,
+        "size": 2100,
+        "time": 3
+      },
+      {
+        "comparisons": 30178,
+        "size": 2200,
+        "time": 4
+      },
+      {
+        "comparisons": 32180,
+        "size": 2300,
+        "time": 4
+      },
+      {
+        "comparisons": 33375,
+        "size": 2400,
+        "time": 4
+      },
+      {
+        "comparisons": 35316,
+        "size": 2500,
+        "time": 4
+      },
+      {
+        "comparisons": 36580,
+        "size": 2600,
+        "time": 5
+      },
+      {
+        "comparisons": 38801,
+        "size": 2700,
+        "time": 5
+      },
+      {
+        "comparisons": 40145,
+        "size": 2800,
+        "time": 5
+      },
+      {
+        "comparisons": 41562,
+        "size": 2900,
+        "time": 5
+      },
+      {
+        "comparisons": 42443,
+        "size": 3000,
+        "time": 5
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 1999,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 3798,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 4817,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 5836,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 7029,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 8343,
+        "size": 600,
+        "time": 1
+      },
+      {
+        "comparisons": 9599,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 10941,
+        "size": 800,
+        "time": 1
+      },
+      {
+        "comparisons": 12321,
+        "size": 900,
+        "time": 1
+      },
+      {
+        "comparisons": 13711,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 15238,
+        "size": 1100,
+        "time": 2
+      },
+      {
+        "comparisons": 16747,
+        "size": 1200,
+        "time": 2
+      },
+      {
+        "comparisons": 18233,
+        "size": 1300,
+        "time": 2
+      },
+      {
+        "comparisons": 19735,
+        "size": 1400,
+        "time": 2
+      },
+      {
+        "comparisons": 21308,
+        "size": 1500,
+        "time": 2
+      },
+      {
+        "comparisons": 22856,
+        "size": 1600,
+        "time": 3
+      },
+      {
+        "comparisons": 24454,
+        "size": 1700,
+        "time": 3
+      },
+      {
+        "comparisons": 26076,
+        "size": 1800,
+        "time": 3
+      },
+      {
+        "comparisons": 27587,
+        "size": 1900,
+        "time": 3
+      },
+      {
+        "comparisons": 29283,
+        "size": 2000,
+        "time": 4
+      },
+      {
+        "comparisons": 30907,
+        "size": 2100,
+        "time": 4
+      },
+      {
+        "comparisons": 32735,
+        "size": 2200,
+        "time": 4
+      },
+      {
+        "comparisons": 34346,
+        "size": 2300,
+        "time": 4
+      },
+      {
+        "comparisons": 36208,
+        "size": 2400,
+        "time": 4
+      },
+      {
+        "comparisons": 37863,
+        "size": 2500,
+        "time": 5
+      },
+      {
+        "comparisons": 39614,
+        "size": 2600,
+        "time": 5
+      },
+      {
+        "comparisons": 41375,
+        "size": 2700,
+        "time": 5
+      },
+      {
+        "comparisons": 43132,
+        "size": 2800,
+        "time": 5
+      },
+      {
+        "comparisons": 44978,
+        "size": 2900,
+        "time": 6
+      },
+      {
+        "comparisons": 46679,
+        "size": 3000,
+        "time": 6
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 589,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 1297,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 2082,
+        "size": 300,
+        "time": 0
+      },
+      {
+        "comparisons": 2927,
+        "size": 400,
+        "time": 0
+      },
+      {
+        "comparisons": 3848,
+        "size": 500,
+        "time": 0
+      },
+      {
+        "comparisons": 4503,
+        "size": 600,
+        "time": 0
+      },
+      {
+        "comparisons": 5305,
+        "size": 700,
+        "time": 1
+      },
+      {
+        "comparisons": 6184,
+        "size": 800,
+        "time": 1
+      },
+      {
+        "comparisons": 7048,
+        "size": 900,
+        "time": 1
+      },
+      {
+        "comparisons": 8068,
+        "size": 1000,
+        "time": 1
+      },
+      {
+        "comparisons": 8752,
+        "size": 1100,
+        "time": 1
+      },
+      {
+        "comparisons": 9776,
+        "size": 1200,
+        "time": 1
+      },
+      {
+        "comparisons": 10890,
+        "size": 1300,
+        "time": 2
+      },
+      {
+        "comparisons": 11800,
+        "size": 1400,
+        "time": 2
+      },
+      {
+        "comparisons": 12661,
+        "size": 1500,
+        "time": 2
+      },
+      {
+        "comparisons": 13762,
+        "size": 1600,
+        "time": 2
+      },
+      {
+        "comparisons": 14485,
+        "size": 1700,
+        "time": 2
+      },
+      {
+        "comparisons": 15747,
+        "size": 1800,
+        "time": 2
+      },
+      {
+        "comparisons": 16747,
+        "size": 1900,
+        "time": 3
+      },
+      {
+        "comparisons": 17891,
+        "size": 2000,
+        "time": 3
+      },
+      {
+        "comparisons": 18745,
+        "size": 2100,
+        "time": 3
+      },
+      {
+        "comparisons": 19573,
+        "size": 2200,
+        "time": 3
+      },
+      {
+        "comparisons": 20488,
+        "size": 2300,
+        "time": 3
+      },
+      {
+        "comparisons": 21239,
+        "size": 2400,
+        "time": 4
+      },
+      {
+        "comparisons": 22377,
+        "size": 2500,
+        "time": 4
+      },
+      {
+        "comparisons": 23111,
+        "size": 2600,
+        "time": 4
+      },
+      {
+        "comparisons": 23996,
+        "size": 2700,
+        "time": 4
+      },
+      {
+        "comparisons": 25091,
+        "size": 2800,
+        "time": 4
+      },
+      {
+        "comparisons": 25847,
+        "size": 2900,
+        "time": 4
+      },
+      {
+        "comparisons": 26934,
+        "size": 3000,
+        "time": 5
+      }
+    ]
+  },
+  "ternary_quick_sort": {
+    "almost_sorted": [
+      {
+        "comparisons": 918,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 2219,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 3332,
+        "size": 300,
+        "time": 1
+      },
+      {
+        "comparisons": 4620,
+        "size": 400,
+        "time": 1
+      },
+      {
+        "comparisons": 6076,
+        "size": 500,
+        "time": 1
+      },
+      {
+        "comparisons": 7284,
+        "size": 600,
+        "time": 2
+      },
+      {
+        "comparisons": 8915,
+        "size": 700,
+        "time": 2
+      },
+      {
+        "comparisons": 10464,
+        "size": 800,
+        "time": 3
+      },
+      {
+        "comparisons": 11787,
+        "size": 900,
+        "time": 3
+      },
+      {
+        "comparisons": 13439,
+        "size": 1000,
+        "time": 4
+      },
+      {
+        "comparisons": 15487,
+        "size": 1100,
+        "time": 4
+      },
+      {
+        "comparisons": 17658,
+        "size": 1200,
+        "time": 5
+      },
+      {
+        "comparisons": 18217,
+        "size": 1300,
+        "time": 5
+      },
+      {
+        "comparisons": 19634,
+        "size": 1400,
+        "time": 5
+      },
+      {
+        "comparisons": 21674,
+        "size": 1500,
+        "time": 6
+      },
+      {
+        "comparisons": 23187,
+        "size": 1600,
+        "time": 7
+      },
+      {
+        "comparisons": 24700,
+        "size": 1700,
+        "time": 7
+      },
+      {
+        "comparisons": 26138,
+        "size": 1800,
+        "time": 8
+      },
+      {
+        "comparisons": 27671,
+        "size": 1900,
+        "time": 8
+      },
+      {
+        "comparisons": 29806,
+        "size": 2000,
+        "time": 8
+      },
+      {
+        "comparisons": 31142,
+        "size": 2100,
+        "time": 20
+      },
+      {
+        "comparisons": 32982,
+        "size": 2200,
+        "time": 10
+      },
+      {
+        "comparisons": 34885,
+        "size": 2300,
+        "time": 10
+      },
+      {
+        "comparisons": 36550,
+        "size": 2400,
+        "time": 12
+      },
+      {
+        "comparisons": 37977,
+        "size": 2500,
+        "time": 11
+      },
+      {
+        "comparisons": 39592,
+        "size": 2600,
+        "time": 12
+      },
+      {
+        "comparisons": 41115,
+        "size": 2700,
+        "time": 12
+      },
+      {
+        "comparisons": 42478,
+        "size": 2800,
+        "time": 13
+      },
+      {
+        "comparisons": 44960,
+        "size": 2900,
+        "time": 14
+      },
+      {
+        "comparisons": 46953,
+        "size": 3000,
+        "time": 15
+      }
+    ],
+    "random": [
+      {
+        "comparisons": 1714,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 3350,
+        "size": 200,
+        "time": 1
+      },
+      {
+        "comparisons": 5441,
+        "size": 300,
+        "time": 1
+      },
+      {
+        "comparisons": 7203,
+        "size": 400,
+        "time": 2
+      },
+      {
+        "comparisons": 8251,
+        "size": 500,
+        "time": 2
+      },
+      {
+        "comparisons": 10373,
+        "size": 600,
+        "time": 3
+      },
+      {
+        "comparisons": 12711,
+        "size": 700,
+        "time": 3
+      },
+      {
+        "comparisons": 14503,
+        "size": 800,
+        "time": 4
+      },
+      {
+        "comparisons": 16197,
+        "size": 900,
+        "time": 4
+      },
+      {
+        "comparisons": 16064,
+        "size": 1000,
+        "time": 5
+      },
+      {
+        "comparisons": 18608,
+        "size": 1100,
+        "time": 5
+      },
+      {
+        "comparisons": 21867,
+        "size": 1200,
+        "time": 6
+      },
+      {
+        "comparisons": 23333,
+        "size": 1300,
+        "time": 7
+      },
+      {
+        "comparisons": 27474,
+        "size": 1400,
+        "time": 7
+      },
+      {
+        "comparisons": 25367,
+        "size": 1500,
+        "time": 7
+      },
+      {
+        "comparisons": 26677,
+        "size": 1600,
+        "time": 8
+      },
+      {
+        "comparisons": 31507,
+        "size": 1700,
+        "time": 9
+      },
+      {
+        "comparisons": 32308,
+        "size": 1800,
+        "time": 9
+      },
+      {
+        "comparisons": 33697,
+        "size": 1900,
+        "time": 9
+      },
+      {
+        "comparisons": 40271,
+        "size": 2000,
+        "time": 14
+      },
+      {
+        "comparisons": 39144,
+        "size": 2100,
+        "time": 11
+      },
+      {
+        "comparisons": 39545,
+        "size": 2200,
+        "time": 20
+      },
+      {
+        "comparisons": 48235,
+        "size": 2300,
+        "time": 14
+      },
+      {
+        "comparisons": 49024,
+        "size": 2400,
+        "time": 17
+      },
+      {
+        "comparisons": 44863,
+        "size": 2500,
+        "time": 13
+      },
+      {
+        "comparisons": 48236,
+        "size": 2600,
+        "time": 16
+      },
+      {
+        "comparisons": 48668,
+        "size": 2700,
+        "time": 20
+      },
+      {
+        "comparisons": 54227,
+        "size": 2800,
+        "time": 17
+      },
+      {
+        "comparisons": 54165,
+        "size": 2900,
+        "time": 20
+      },
+      {
+        "comparisons": 63944,
+        "size": 3000,
+        "time": 18
+      }
+    ],
+    "reversed": [
+      {
+        "comparisons": 927,
+        "size": 100,
+        "time": 0
+      },
+      {
+        "comparisons": 2099,
+        "size": 200,
+        "time": 0
+      },
+      {
+        "comparisons": 3363,
+        "size": 300,
+        "time": 1
+      },
+      {
+        "comparisons": 4718,
+        "size": 400,
+        "time": 1
+      },
+      {
+        "comparisons": 5987,
+        "size": 500,
+        "time": 1
+      },
+      {
+        "comparisons": 7380,
+        "size": 600,
+        "time": 2
+      },
+      {
+        "comparisons": 8907,
+        "size": 700,
+        "time": 2
+      },
+      {
+        "comparisons": 10549,
+        "size": 800,
+        "time": 3
+      },
+      {
+        "comparisons": 11831,
+        "size": 900,
+        "time": 3
+      },
+      {
+        "comparisons": 13344,
+        "size": 1000,
+        "time": 3
+      },
+      {
+        "comparisons": 14722,
+        "size": 1100,
+        "time": 4
+      },
+      {
+        "comparisons": 16548,
+        "size": 1200,
+        "time": 4
+      },
+      {
+        "comparisons": 18282,
+        "size": 1300,
+        "time": 5
+      },
+      {
+        "comparisons": 19810,
+        "size": 1400,
+        "time": 5
+      },
+      {
+        "comparisons": 21518,
+        "size": 1500,
+        "time": 6
+      },
+      {
+        "comparisons": 23188,
+        "size": 1600,
+        "time": 6
+      },
+      {
+        "comparisons": 24827,
+        "size": 1700,
+        "time": 7
+      },
+      {
+        "comparisons": 26503,
+        "size": 1800,
+        "time": 7
+      },
+      {
+        "comparisons": 28060,
+        "size": 1900,
+        "time": 8
+      },
+      {
+        "comparisons": 29616,
+        "size": 2000,
+        "time": 8
+      },
+      {
+        "comparisons": 31564,
+        "size": 2100,
+        "time": 13
+      },
+      {
+        "comparisons": 33109,
+        "size": 2200,
+        "time": 11
+      },
+      {
+        "comparisons": 35009,
+        "size": 2300,
+        "time": 12
+      },
+      {
+        "comparisons": 36750,
+        "size": 2400,
+        "time": 12
+      },
+      {
+        "comparisons": 38203,
+        "size": 2500,
+        "time": 11
+      },
+      {
+        "comparisons": 40307,
+        "size": 2600,
+        "time": 11
+      },
+      {
+        "comparisons": 41971,
+        "size": 2700,
+        "time": 12
+      },
+      {
+        "comparisons": 43770,
+        "size": 2800,
+        "time": 13
+      },
+      {
+        "comparisons": 45400,
+        "size": 2900,
+        "time": 13
+      },
+      {
+        "comparisons": 47347,
+        "size": 3000,
+        "time": 17
+      }
+    ]
+  }
+}
