@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(SET_9)
+project(A1)
 
 set(CMAKE_CXX_STANDARD 23)
 
@@ -10,4 +10,4 @@ file(GLOB SOURCES
         main.cpp
 )
 
-add_executable(SET_9 ${SOURCES})
+add_executable(A1 ${SOURCES})
