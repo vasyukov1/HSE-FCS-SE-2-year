@@ -1,0 +1,227 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Payment Service is for creating, top up and watching accounts.",
+        "title": "Payment Service",
+        "contact": {},
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/accounts": {
+            "post": {
+                "description": "Generates a new account with zero balance and returns its UUID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Create new account",
+                "responses": {
+                    "201": {
+                        "description": "account_id",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/top_up": {
+            "post": {
+                "description": "Increase the balance of the specified account by the given amount",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Top up account balance",
+                "parameters": [
+                    {
+                        "description": "Account ID and amount",
+                        "name": "top_up",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.TopUpRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BalanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request payload or amount",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "Account not found",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/withdraw": {
+            "post": {
+                "description": "Decrease the balance of the specified account by the given amount",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Withdraw from account",
+                "parameters": [
+                    {
+                        "description": "Account ID and amount to withdraw",
+                        "name": "withdraw",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.WithdrawRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BalanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request payload or amount",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "402": {
+                        "description": "Insufficient funds",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/{account_id}/balance": {
+            "get": {
+                "description": "Returns the current balance for the given account",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get account balance",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Account UUID",
+                        "name": "account_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BalanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid account_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Get balance failed",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "domain.BalanceResponse": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "balance": {
+                    "type": "number"
+                }
+            }
+        },
+        "domain.TopUpRequest": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                }
+            }
+        },
+        "domain.WithdrawRequest": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

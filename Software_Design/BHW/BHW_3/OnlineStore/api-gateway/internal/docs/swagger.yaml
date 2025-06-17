@@ -7,20 +7,60 @@ definitions:
       balance:
         type: number
     type: object
+  domain.OrderRequest:
+    properties:
+      amount:
+        type: number
+      description:
+        type: string
+      user_id:
+        type: string
+    type: object
+  domain.OrderResponse:
+    properties:
+      amount:
+        type: number
+      created_at:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      status:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  domain.StatusResponse:
+    properties:
+      id:
+        type: string
+      status:
+        type: string
+    type: object
+  domain.TopUpRequest:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+    type: object
 info:
   contact: {}
   description: Gateway is for distributing requests between microservices
   title: API Gateway
   version: "1.0"
 paths:
-  /balance:
+  /accounts/{account_id}/balance:
     get:
       consumes:
       - application/json
       description: Return current balance for the given account ID
       parameters:
       - description: Account UUID
-        in: query
+        in: path
         name: account_id
         required: true
         type: string
@@ -42,7 +82,7 @@ paths:
       summary: Get account balance
       tags:
       - accounts
-  /create:
+  /accounts/create:
     post:
       consumes:
       - application/json
@@ -62,5 +102,111 @@ paths:
             type: string
       summary: Proxy account creation
       tags:
-      - gateway
+      - accounts
+  /accounts/top_up:
+    post:
+      consumes:
+      - application/json
+      description: Increases the balance of the specified account by the given amount
+      parameters:
+      - description: Account ID and amount to top up
+        in: body
+        name: top_up_request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.TopUpRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.BalanceResponse'
+        "400":
+          description: Invalid request payload
+          schema:
+            type: string
+        "502":
+          description: Top up failed
+          schema:
+            type: string
+      summary: Top up account balance
+      tags:
+      - accounts
+  /orders:
+    get:
+      consumes:
+      - application/json
+      description: Returns a list of all orders
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/domain.OrderResponse'
+            type: array
+        "502":
+          description: Get orders failed
+          schema:
+            type: string
+      summary: List all orders
+      tags:
+      - orders
+  /orders/{order_id}/status:
+    get:
+      consumes:
+      - application/json
+      description: Returns status for the given order ID
+      parameters:
+      - description: Order UUID
+        in: path
+        name: order_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.StatusResponse'
+        "502":
+          description: Get order status failed
+          schema:
+            type: string
+      summary: Get order status
+      tags:
+      - orders
+  /orders/create:
+    post:
+      consumes:
+      - application/json
+      description: Creates an order for a user with given amount and description
+      parameters:
+      - description: Order payload
+        in: body
+        name: order
+        required: true
+        schema:
+          $ref: '#/definitions/domain.OrderRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/domain.OrderResponse'
+        "400":
+          description: Invalid payload or parameters
+          schema:
+            type: string
+        "502":
+          description: Create order failed
+          schema:
+            type: string
+      summary: Create new order
+      tags:
+      - orders
 swagger: "2.0"

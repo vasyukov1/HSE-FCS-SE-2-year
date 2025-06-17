@@ -1,0 +1,148 @@
+basePath: /
+definitions:
+  domain.BalanceResponse:
+    properties:
+      account_id:
+        type: string
+      balance:
+        type: number
+    type: object
+  domain.TopUpRequest:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+    type: object
+  domain.WithdrawRequest:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+    type: object
+info:
+  contact: {}
+  description: Payment Service is for creating, top up and watching accounts.
+  title: Payment Service
+  version: "1.0"
+paths:
+  /accounts:
+    post:
+      consumes:
+      - application/json
+      description: Generates a new account with zero balance and returns its UUID
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: account_id
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Create new account
+      tags:
+      - accounts
+  /accounts/{account_id}/balance:
+    get:
+      consumes:
+      - application/json
+      description: Returns the current balance for the given account
+      parameters:
+      - description: Account UUID
+        in: path
+        name: account_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.BalanceResponse'
+        "400":
+          description: Invalid account_id
+          schema:
+            type: string
+        "500":
+          description: Get balance failed
+          schema:
+            type: string
+      summary: Get account balance
+      tags:
+      - accounts
+  /accounts/top_up:
+    post:
+      consumes:
+      - application/json
+      description: Increase the balance of the specified account by the given amount
+      parameters:
+      - description: Account ID and amount
+        in: body
+        name: top_up
+        required: true
+        schema:
+          $ref: '#/definitions/domain.TopUpRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.BalanceResponse'
+        "400":
+          description: Invalid request payload or amount
+          schema:
+            type: string
+        "404":
+          description: Account not found
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Top up account balance
+      tags:
+      - accounts
+  /accounts/withdraw:
+    post:
+      consumes:
+      - application/json
+      description: Decrease the balance of the specified account by the given amount
+      parameters:
+      - description: Account ID and amount to withdraw
+        in: body
+        name: withdraw
+        required: true
+        schema:
+          $ref: '#/definitions/domain.WithdrawRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.BalanceResponse'
+        "400":
+          description: Invalid request payload or amount
+          schema:
+            type: string
+        "402":
+          description: Insufficient funds
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Withdraw from account
+      tags:
+      - accounts
+swagger: "2.0"

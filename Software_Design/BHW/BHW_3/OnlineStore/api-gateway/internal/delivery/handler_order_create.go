@@ -17,7 +17,7 @@ import (
 // @Success      201 {object} domain.OrderResponse
 // @Failure      400 {string} string "Invalid payload or parameters"
 // @Failure      502 {string} string "Create order failed"
-// @Router       /orders [post]
+// @Router       /orders/create [post]
 func (h *Handler) handleOrderCreate(w http.ResponseWriter, req *http.Request) {
 	var r domain.OrderRequest
 	if err := json.NewDecoder(req.Body).Decode(&r); err != nil {

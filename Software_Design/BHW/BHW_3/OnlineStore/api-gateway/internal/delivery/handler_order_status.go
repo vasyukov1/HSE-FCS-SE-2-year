@@ -6,6 +6,16 @@ import (
 	"strings"
 )
 
+// handleOrderStatus godoc
+// @Summary      Get order status
+// @Description  Returns status for the given order ID
+// @Tags         orders
+// @Accept       json
+// @Produce      json
+// @Param        order_id  path   string  true  "Order UUID"
+// @Success      200 {object} domain.StatusResponse
+// @Failure      502 {string} string "Get order status failed"
+// @Router       /orders/{order_id}/status [get]
 func (h *Handler) handleOrderStatus(w http.ResponseWriter, req *http.Request) {
 	parts := strings.Split(req.URL.Path, "/")
 	if len(parts) != 4 || parts[1] != "orders" || parts[3] != "status" {

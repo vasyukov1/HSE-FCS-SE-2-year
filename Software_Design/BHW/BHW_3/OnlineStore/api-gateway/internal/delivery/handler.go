@@ -33,6 +33,6 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	case r.Method == http.MethodGet && strings.HasPrefix(r.URL.Path, "/orders/") && strings.HasSuffix(r.URL.Path, "/status"):
 		h.handleOrderStatus(w, r)
 	default:
-		http.NotFound(w, r)
+		http.Error(w, "Not Found", http.StatusNotFound)
 	}
 }

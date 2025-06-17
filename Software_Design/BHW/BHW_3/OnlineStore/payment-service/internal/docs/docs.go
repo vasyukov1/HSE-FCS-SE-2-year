@@ -15,9 +15,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/accounts/create": {
+        "/accounts": {
             "post": {
-                "description": "Proxies account creation request to payment-service",
+                "description": "Generates a new account with zero balance and returns its UUID",
                 "consumes": [
                     "application/json"
                 ],
@@ -27,7 +27,7 @@ const docTemplate = `{
                 "tags": [
                     "accounts"
                 ],
-                "summary": "Proxy account creation",
+                "summary": "Create new account",
                 "responses": {
                     "201": {
                         "description": "account_id",
@@ -38,8 +38,8 @@ const docTemplate = `{
                             }
                         }
                     },
-                    "502": {
-                        "description": "Create account failed",
+                    "500": {
+                        "description": "Internal server error",
                         "schema": {
                             "type": "string"
                         }
@@ -49,7 +49,7 @@ const docTemplate = `{
         },
         "/accounts/top_up": {
             "post": {
-                "description": "Increases the balance of the specified account by the given amount",
+                "description": "Increase the balance of the specified account by the given amount",
                 "consumes": [
                     "application/json"
                 ],
@@ -62,8 +62,8 @@ const docTemplate = `{
                 "summary": "Top up account balance",
                 "parameters": [
                     {
-                        "description": "Account ID and amount to top up",
-                        "name": "top_up_request",
+                        "description": "Account ID and amount",
+                        "name": "top_up",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -79,13 +79,71 @@ const docTemplate = `{
                         }
                     },
                     "400": {
-                        "description": "Invalid request payload",
+                        "description": "Invalid request payload or amount",
                         "schema": {
                             "type": "string"
                         }
                     },
-                    "502": {
-                        "description": "Top up failed",
+                    "404": {
+                        "description": "Account not found",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/withdraw": {
+            "post": {
+                "description": "Decrease the balance of the specified account by the given amount",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Withdraw from account",
+                "parameters": [
+                    {
+                        "description": "Account ID and amount to withdraw",
+                        "name": "withdraw",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.WithdrawRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BalanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request payload or amount",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "402": {
+                        "description": "Insufficient funds",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
                         "schema": {
                             "type": "string"
                         }
@@ -95,7 +153,7 @@ const docTemplate = `{
         },
         "/accounts/{account_id}/balance": {
             "get": {
-                "description": "Return current balance for the given account ID",
+                "description": "Returns the current balance for the given account",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,129 +181,13 @@ const docTemplate = `{
                         }
                     },
                     "400": {
-                        "description": "Missing 'account_id' parameter",
+                        "description": "Invalid account_id",
                         "schema": {
                             "type": "string"
                         }
                     },
-                    "502": {
+                    "500": {
                         "description": "Get balance failed",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/orders": {
-            "get": {
-                "description": "Returns a list of all orders",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
-                "summary": "List all orders",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.OrderResponse"
-                            }
-                        }
-                    },
-                    "502": {
-                        "description": "Get orders failed",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/orders/create": {
-            "post": {
-                "description": "Creates an order for a user with given amount and description",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
-                "summary": "Create new order",
-                "parameters": [
-                    {
-                        "description": "Order payload",
-                        "name": "order",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.OrderRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created",
-                        "schema": {
-                            "$ref": "#/definitions/domain.OrderResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid payload or parameters",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "502": {
-                        "description": "Create order failed",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/orders/{order_id}/status": {
-            "get": {
-                "description": "Returns status for the given order ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
-                "summary": "Get order status",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Order UUID",
-                        "name": "order_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/domain.StatusResponse"
-                        }
-                    },
-                    "502": {
-                        "description": "Get order status failed",
                         "schema": {
                             "type": "string"
                         }
@@ -266,58 +208,18 @@ const docTemplate = `{
                 }
             }
         },
-        "domain.OrderRequest": {
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "type": "number"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "user_id": {
-                    "type": "string"
-                }
-            }
-        },
-        "domain.OrderResponse": {
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "type": "number"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "updated_at": {
-                    "type": "string"
-                },
-                "user_id": {
-                    "type": "string"
-                }
-            }
-        },
-        "domain.StatusResponse": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                }
-            }
-        },
         "domain.TopUpRequest": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                }
+            }
+        },
+        "domain.WithdrawRequest": {
             "type": "object",
             "properties": {
                 "account_id": {
@@ -337,8 +239,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "API Gateway",
-	Description:      "Gateway is for distributing requests between microservices",
+	Title:            "Payment Service",
+	Description:      "Payment Service is for creating, top up and watching accounts.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

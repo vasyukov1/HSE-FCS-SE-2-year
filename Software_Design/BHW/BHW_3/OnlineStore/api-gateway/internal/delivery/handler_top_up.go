@@ -13,7 +13,7 @@ import (
 // @Accept       json
 // @Produce      json
 // @Param        top_up_request  body      domain.TopUpRequest  true  "Account ID and amount to top up"
-// @Success      200 {object} map[string]interface{}  "account_id, new_balance"
+// @Success      200 {object} domain.BalanceResponse
 // @Failure      400 {string} string "Invalid request payload"
 // @Failure      502 {string} string "Top up failed"
 // @Router       /accounts/top_up [post]

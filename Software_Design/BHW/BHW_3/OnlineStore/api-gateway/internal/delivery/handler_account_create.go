@@ -4,15 +4,15 @@ import (
 	"net/http"
 )
 
-// handleCreate godoc
+// handleAccountCreate godoc
 // @Summary      Proxy account creation
 // @Description  Proxies account creation request to payment-service
-// @Tags         gateway
+// @Tags         accounts
 // @Accept       json
 // @Produce      json
 // @Success      201 {object} map[string]string "account_id"
 // @Failure      502 {string} string "Create account failed"
-// @Router       /create [post]
+// @Router       /accounts/create [post]
 func (h *Handler) handleAccountCreate(w http.ResponseWriter, req *http.Request) {
 	resp, err := h.paymentService.CreateAccount(req.Context())
 	if err != nil {

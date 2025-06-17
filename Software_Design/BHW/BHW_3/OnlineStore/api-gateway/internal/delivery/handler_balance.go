@@ -13,11 +13,11 @@ import (
 // @Tags         accounts
 // @Accept       json
 // @Produce      json
-// @Param        account_id  query   string  true  "Account UUID"
+// @Param        account_id  path   string  true  "Account UUID"
 // @Success      200 {object} domain.BalanceResponse
 // @Failure      400 {string} string "Missing 'account_id' parameter"
 // @Failure      502 {string} string "Get balance failed"
-// @Router       /balance [get]
+// @Router       /accounts/{account_id}/balance [get]
 func (h *Handler) handleBalance(w http.ResponseWriter, req *http.Request) {
 	parts := strings.Split(req.URL.Path, "/")
 	if len(parts) < 4 || parts[1] != "accounts" || parts[3] != "balance" {

@@ -7,6 +7,18 @@ import (
 	"payment-service/internal/domain"
 )
 
+// handleWithdraw godoc
+// @Summary      Withdraw from account
+// @Description  Decrease the balance of the specified account by the given amount
+// @Tags         accounts
+// @Accept       json
+// @Produce      json
+// @Param        withdraw  body      domain.WithdrawRequest  true  "Account ID and amount to withdraw"
+// @Success      200 {object} domain.BalanceResponse
+// @Failure      400 {string} string "Invalid request payload or amount"
+// @Failure      402 {string} string "Insufficient funds"
+// @Failure      500 {string} string "Internal server error"
+// @Router       /accounts/withdraw [post]
 func (h *Handler) handleWithdraw(w http.ResponseWriter, r *http.Request) {
 	var req domain.WithdrawRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {

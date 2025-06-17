@@ -17,6 +17,7 @@ import (
 // @Param        order  body      domain.CreateOrderRequest  true  "Order payload"
 // @Success      201 {object} domain.Order
 // @Failure      400 {string} string "Invalid request"
+// @Failure      402 {string} string "Insufficient funds"
 // @Failure      500 {string} string "Internal server error"
 // @Router       /orders [post]
 func (h *Handler) handleCreate(w http.ResponseWriter, r *http.Request) {

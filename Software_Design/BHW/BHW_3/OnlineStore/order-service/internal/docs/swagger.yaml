@@ -1,0 +1,135 @@
+basePath: /
+definitions:
+  domain.CreateOrderRequest:
+    properties:
+      amount:
+        type: number
+      description:
+        type: string
+      user_id:
+        type: string
+    type: object
+  domain.Order:
+    properties:
+      amount:
+        type: number
+      created_at:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      status:
+        $ref: '#/definitions/domain.OrderStatus'
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  domain.OrderStatus:
+    enum:
+    - new
+    - finished
+    - cancelled
+    type: string
+    x-enum-varnames:
+    - StatusNew
+    - StatusFinished
+    - StatusFailed
+info:
+  contact: {}
+  description: Order Service is for creating and watching orders.
+  title: Order Service
+  version: "1.0"
+paths:
+  /orders:
+    get:
+      consumes:
+      - application/json
+      description: Returns a JSON array of all orders in the system
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/domain.Order'
+            type: array
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: List all orders
+      tags:
+      - orders
+    post:
+      consumes:
+      - application/json
+      description: Creates an order (validates user_id, amount>0, description) and
+        returns it
+      parameters:
+      - description: Order payload
+        in: body
+        name: order
+        required: true
+        schema:
+          $ref: '#/definitions/domain.CreateOrderRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/domain.Order'
+        "400":
+          description: Invalid request
+          schema:
+            type: string
+        "402":
+          description: Insufficient funds
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Create new order
+      tags:
+      - orders
+  /orders/{order_id}/status:
+    get:
+      consumes:
+      - application/json
+      description: Returns the status field for the given order
+      parameters:
+      - description: Order UUID
+        in: path
+        name: order_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: id and status
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid order_id
+          schema:
+            type: string
+        "404":
+          description: Order not found
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Get order status
+      tags:
+      - orders
+swagger: "2.0"
