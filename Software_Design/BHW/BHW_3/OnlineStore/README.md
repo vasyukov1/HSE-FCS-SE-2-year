@@ -120,6 +120,29 @@ swag init -g cmd/server/main.go -o internal/docs
 
 Документация доступна по адресу: `http://localhost:<PORT>/swagger/index.html`
 
+### Тестирование кода
+
+```bash
+Перейдите в микросервис:
+cd <MICROSERVICE_NAME> 
+```
+
+Выполните следующие команды:
+
+ ```bash
+ go test -coverprofile=coverage.out ./internal/...
+ ```
+
+Просмотр покрытого тестами кода
+ ```bash
+ go tool cover -html=coverage.out
+ ```
+Просмотр процентного покрытия тестами
+```bash
+go tool cover -func=coverage.out
+```
+
+Процентное покрытие кода каждого сервиса >17%.
 ---
 
 ### Особенности
