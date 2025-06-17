@@ -218,8 +218,6 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "Order Service is for creating and watching orders.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	LeftDelim:        "{{",
-	RightDelim:       "}}",
 }
 
 func init() {

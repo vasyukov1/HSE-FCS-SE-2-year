@@ -243,8 +243,6 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "Payment Service is for creating, top up and watching accounts.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	LeftDelim:        "{{",
-	RightDelim:       "}}",
 }
 
 func init() {

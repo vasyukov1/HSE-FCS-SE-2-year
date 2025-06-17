@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"payment-service/internal/config"
 	"payment-service/internal/delivery"
+	_ "payment-service/internal/docs"
 	"payment-service/internal/infrastructure"
 	"payment-service/internal/repository"
 )

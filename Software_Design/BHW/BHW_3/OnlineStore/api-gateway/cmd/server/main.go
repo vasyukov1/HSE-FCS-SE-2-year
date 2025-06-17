@@ -3,6 +3,7 @@ package main
 import (
 	"api-gateway/internal/config"
 	"api-gateway/internal/delivery"
+	_ "api-gateway/internal/docs"
 	"api-gateway/internal/infrastructure"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"log"

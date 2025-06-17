@@ -6,6 +6,7 @@ import (
 	httpSwagger "github.com/swaggo/http-swagger"
 	"log"
 	"net/http"
+	_ "order-service/internal/docs"
 	"order-service/internal/kafka"
 	"order-service/internal/payment"
 

@@ -72,7 +72,9 @@ docker-compose up --build
 - Создать счёт:
      ```bash
   curl -X POST "http://localhost:8080/accounts/create"
-  ```
+    ```bash
+    curl -X POST "http://localhost:8080/accounts/create"
+    ```
   
 - Пополнить счёт:
     ```bash
@@ -93,7 +95,7 @@ docker-compose up --build
     curl -X POST http://localhost:8080/orders/create \
     -H "Content-Type: application/json" \
     -d '{
-    "user_id":"<user_id>",
+    "user_id":"<account_id>",
     "amount":<amount>,
     "description":"<description>"
     }'
@@ -105,9 +107,9 @@ docker-compose up --build
     ```
 
 - Проверить статус заказа:
-```bash
-curl -X GET http://localhost:8080/orders/<order_id>/status
-```
+  ```bash
+  curl -X GET http://localhost:8080/orders/<order_id>/status
+  ```
 
 ### Swagger
 
@@ -143,6 +145,7 @@ go tool cover -func=coverage.out
 ```
 
 Процентное покрытие кода каждого сервиса >17%.
+
 ---
 
 ### Особенности

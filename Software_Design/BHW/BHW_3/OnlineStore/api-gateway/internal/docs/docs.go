@@ -341,8 +341,6 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "Gateway is for distributing requests between microservices",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	LeftDelim:        "{{",
-	RightDelim:       "}}",
 }
 
 func init() {
