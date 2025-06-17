@@ -1,0 +1,66 @@
+basePath: /
+definitions:
+  domain.BalanceResponse:
+    properties:
+      account_id:
+        type: string
+      balance:
+        type: number
+    type: object
+info:
+  contact: {}
+  description: Gateway is for distributing requests between microservices
+  title: API Gateway
+  version: "1.0"
+paths:
+  /balance:
+    get:
+      consumes:
+      - application/json
+      description: Return current balance for the given account ID
+      parameters:
+      - description: Account UUID
+        in: query
+        name: account_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.BalanceResponse'
+        "400":
+          description: Missing 'account_id' parameter
+          schema:
+            type: string
+        "502":
+          description: Get balance failed
+          schema:
+            type: string
+      summary: Get account balance
+      tags:
+      - accounts
+  /create:
+    post:
+      consumes:
+      - application/json
+      description: Proxies account creation request to payment-service
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: account_id
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "502":
+          description: Create account failed
+          schema:
+            type: string
+      summary: Proxy account creation
+      tags:
+      - gateway
+swagger: "2.0"

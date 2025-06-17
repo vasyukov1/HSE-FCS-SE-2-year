@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS account;
+
+CREATE TABLE account (
+    id UUID PRIMARY KEY,
+    balance FLOAT NOT NULL DEFAULT 0,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

@@ -1,0 +1,152 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - online-store-net
+    depends_on:
+      payment-service:
+        condition: service_started
+    env_file: ./api-gateway/.env
+
+  payment-service:
+    build:
+      context: ./payment-service
+      dockerfile: Dockerfile
+    container_name: payment-service
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./payment-service/data:/data
+    networks:
+      -  online-store-net
+    depends_on:
+      db_account:
+        condition: service_healthy
+    env_file: ./payment-service/.env
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db_account:5432/${DB_ACCOUNT}
+
+  order-service:
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    container_name: order-service
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./order-service/data:/data
+    networks:
+      - online-store-net
+    depends_on:
+      db_order:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+    env_file: ./order-service/.env
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db_order:5432/${DB_ORDER}
+      KAFKA_BROKERS: kafka:29092
+
+  db_account:
+    image: postgres:15
+    container_name: db-account
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_ACCOUNT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - "db-account-data:/var/lib/postgres/data"
+      - "./payment-service/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    networks:
+      - online-store-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${DB_ACCOUNT}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db_order:
+    image: postgres:15
+    container_name: db-order
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_ORDER}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - "db-order-data:/var/lib/postgres/data"
+      - "./order-service/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    networks:
+      - online-store-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${DB_ORDER}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - online-store-net
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      - online-store-net
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8083:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    depends_on:
+      - kafka
+    networks:
+      - online-store-net
+
+volumes:
+  db-account-data:
+  db-order-data:
+  kafka-data:
+
+networks:
+  online-store-net:
+    driver: bridge
