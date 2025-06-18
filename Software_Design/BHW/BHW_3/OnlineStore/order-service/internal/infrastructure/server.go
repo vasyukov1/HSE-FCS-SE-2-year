@@ -48,13 +48,11 @@ func (s *Server) Create(ctx context.Context, req domain.CreateOrderRequest) (*do
 	if s.paymentClient != nil {
 		_, err := s.paymentClient.Withdraw(ctx, userID, req.Amount)
 		if err != nil {
-			// Недостаточно средств — отменяем заказ
 			o.Status = domain.StatusFailed
 			o.UpdatedAt = time.Now().UTC()
 			_ = s.storage.UpdateStatus(ctx, o)
 			return nil, fmt.Errorf("payment failed: %w", err)
 		}
-		// Можно обновить статус на finished, если нужно
 		o.Status = domain.StatusFinished
 		o.UpdatedAt = time.Now().UTC()
 		_ = s.storage.UpdateStatus(ctx, o)
