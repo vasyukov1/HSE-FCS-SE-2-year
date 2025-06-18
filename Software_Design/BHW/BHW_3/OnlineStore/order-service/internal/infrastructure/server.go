@@ -79,3 +79,13 @@ func (s *Server) List(ctx context.Context) ([]domain.Order, error) {
 func (s *Server) GetByID(ctx context.Context, id uuid.UUID) (*domain.Order, error) {
 	return s.storage.GetByID(ctx, id)
 }
+
+func (s *Server) UpdateOrderStatus(ctx context.Context, orderID uuid.UUID, status domain.OrderStatus) error {
+	o, err := s.storage.GetByID(ctx, orderID)
+	if err != nil {
+		return err
+	}
+	o.Status = status
+	o.UpdatedAt = time.Now().UTC()
+	return s.storage.UpdateStatus(ctx, o)
+}

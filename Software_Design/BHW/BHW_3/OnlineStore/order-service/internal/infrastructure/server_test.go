@@ -2,9 +2,11 @@ package infrastructure
 
 import (
 	"context"
+	"errors"
 	"github.com/google/uuid"
 	"order-service/internal/domain"
 	"testing"
+	"time"
 )
 
 type testStorage struct {
@@ -89,5 +91,103 @@ func TestServer_Create_SaveError(t *testing.T) {
 	_, err := server.Create(context.Background(), req)
 	if err != context.DeadlineExceeded {
 		t.Fatalf("expected context.DeadlineExceeded, got %v", err)
+	}
+}
+
+func (s *stubStorage) Save(ctx context.Context, o *domain.Order) error {
+	panic("")
+}
+func (s *stubStorage) GetAll(ctx context.Context) ([]domain.Order, error) {
+	panic("")
+}
+func (s *stubStorage) GetByID(ctx context.Context, id uuid.UUID) (*domain.Order, error) {
+	s.getByID = id
+	if s.getByIDErr != nil {
+		return nil, s.getByIDErr
+	}
+	return &domain.Order{
+		ID:        id,
+		Status:    domain.StatusNew,
+		CreatedAt: time.Date(2000, 1, 1, 0, 0, 0, 0, time.UTC),
+		UpdatedAt: time.Date(2000, 1, 1, 0, 0, 0, 0, time.UTC),
+	}, nil
+}
+func (s *stubStorage) UpdateStatus(ctx context.Context, o *domain.Order) error {
+	s.updateStatusArg = o
+	return s.updateStatusErr
+}
+
+func TestServer_UpdateOrderStatus_Success(t *testing.T) {
+	ctx := context.Background()
+	orderID := uuid.New()
+
+	stub := &stubStorage{}
+	srv := NewServer(stub, nil, nil)
+
+	err := srv.UpdateOrderStatus(ctx, orderID, domain.StatusFinished)
+	if err != nil {
+		t.Fatalf("ожидали no error, получили %v", err)
+	}
+
+	if stub.getByID != orderID {
+		t.Errorf("GetByID был вызван с %v, ожидали %v", stub.getByID, orderID)
+	}
+
+	if stub.updateStatusArg == nil {
+		t.Fatal("UpdateStatus не был вызван")
+	}
+	if stub.updateStatusArg.Status != domain.StatusFinished {
+		t.Errorf("Order.Status = %q, ожидали %q", stub.updateStatusArg.Status, domain.StatusFinished)
+	}
+	if !stub.updateStatusArg.UpdatedAt.After(stub.updateStatusArg.CreatedAt) {
+		t.Errorf("UpdatedAt (%v) не позже CreatedAt (%v)",
+			stub.updateStatusArg.UpdatedAt, stub.updateStatusArg.CreatedAt)
+	}
+}
+
+func TestServer_UpdateOrderStatus_GetByIDError(t *testing.T) {
+	ctx := context.Background()
+	orderID := uuid.New()
+
+	stubErr := errors.New("db down")
+	stub := &stubStorage{getByIDErr: stubErr}
+	srv := NewServer(stub, nil, nil)
+
+	err := srv.UpdateOrderStatus(ctx, orderID, domain.StatusFinished)
+	if !errors.Is(err, stubErr) {
+		t.Fatalf("ожидали ошибку %v, получили %v", stubErr, err)
+	}
+
+	if stub.updateStatusArg != nil {
+		t.Errorf("UpdateStatus не должен был вызываться, но получил %+v", stub.updateStatusArg)
+	}
+}
+
+type stubStorage struct {
+	getByID         uuid.UUID
+	updateStatusArg *domain.Order
+
+	getByIDErr      error
+	updateStatusErr error
+}
+
+func TestServer_UpdateOrderStatus_UpdateStatusError(t *testing.T) {
+	ctx := context.Background()
+	orderID := uuid.New()
+
+	stubErr := errors.New("cannot update")
+	stub := &stubStorage{updateStatusErr: stubErr}
+	srv := NewServer(stub, nil, nil)
+
+	err := srv.UpdateOrderStatus(ctx, orderID, domain.StatusFailed)
+	if !errors.Is(err, stubErr) {
+		t.Fatalf("ожидали ошибку %v, получили %v", stubErr, err)
+	}
+
+	if stub.getByID != orderID {
+		t.Errorf("GetByID был вызван с %v, ожидали %v", stub.getByID, orderID)
+	}
+	if stub.updateStatusArg == nil {
+		t.Fatal("ожидали, что UpdateStatus будет вызван, но он не вызывался")
 	}
 }

@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/google/uuid"
+	"time"
 )
 
 type CreateAccountRequest struct{}
@@ -51,3 +52,37 @@ var (
 	ErrInvalidAmount     = errors.New("amount must be greater than zero")
 	ErrInsufficientFunds = errors.New("insufficient funds")
 )
+
+type InboxMessage struct {
+	ID          uuid.UUID  `json:"id"`
+	ReceivedAt  time.Time  `json:"received_at"`
+	EventType   string     `json:"event_type"`
+	Payload     []byte     `json:"payload"`
+	ProcessedAt *time.Time `json:"processed_at"`
+}
+
+type OutboxMessage struct {
+	ID           uuid.UUID  `json:"id"`
+	OccurredAt   time.Time  `json:"occurred_at"`
+	EventType    string     `json:"event_type"`
+	Payload      []byte     `json:"payload"`
+	DispatchedAt *time.Time `json:"dispatched_at"`
+}
+
+type OrderCreatedEvent struct {
+	OrderID     string  `json:"order_id"`
+	UserID      string  `json:"user_id"`
+	Amount      float64 `json:"amount"`
+	Description string  `json:"description"`
+	CreatedAt   string  `json:"created_at"`
+}
+
+type PaymentSucceededEvent struct {
+	OrderID string  `json:"order_id"`
+	Amount  float64 `json:"amount"`
+}
+
+type PaymentFailedEvent struct {
+	OrderID string `json:"order_id"`
+	Reason  string `json:"reason"`
+}

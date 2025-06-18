@@ -10,7 +10,9 @@ import (
 	"payment-service/internal/delivery"
 	_ "payment-service/internal/docs"
 	"payment-service/internal/infrastructure"
+	"payment-service/internal/kafka"
 	"payment-service/internal/repository"
+	"time"
 )
 
 // @title Payment Service
@@ -27,7 +29,27 @@ func main() {
 	defer db.Close(context.Background())
 
 	storage := repository.NewPgStorage(db)
+
+	inboxRepo := repository.NewInboxRepo(db)
+	outboxRepo := repository.NewOutboxRepo(db)
+
+	producer := kafka.NewProducer(cfg.Kafka.Brokers, cfg.Kafka.Topic+"_payments")
+	defer producer.Close()
+	dispatcher := kafka.NewOutboxDispatcher(outboxRepo, producer, 5*time.Second, 100)
+	go dispatcher.Start(context.Background())
+
 	server := infrastructure.NewServer(storage)
+	kafka.StartConsumer(
+		context.Background(),
+		cfg.Kafka.Brokers,
+		cfg.Kafka.Topic,
+		cfg.Kafka.ConsumerGroupID,
+		db,
+		server,
+		inboxRepo,
+		outboxRepo,
+		producer,
+	)
 
 	handler := delivery.NewHandler(server)
 	mux := delivery.NewRouter(handler)

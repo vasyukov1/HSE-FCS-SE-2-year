@@ -34,6 +34,14 @@ func (p *Producer) SendOrderCreated(ctx context.Context, event domain.OrderCreat
 	return p.writer.WriteMessages(ctx, msg)
 }
 
+func (p *Producer) SendRaw(ctx context.Context, key, payload []byte) error {
+	msg := kafka.Message{
+		Key:   key,
+		Value: payload,
+	}
+	return p.writer.WriteMessages(ctx, msg)
+}
+
 func (p *Producer) Close() error {
 	return p.writer.Close()
 }

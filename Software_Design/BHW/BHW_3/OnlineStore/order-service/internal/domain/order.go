@@ -54,6 +54,7 @@ type OrderService interface {
 	Create(ctx context.Context, req CreateOrderRequest) (*Order, error)
 	List(ctx context.Context) ([]Order, error)
 	GetByID(ctx context.Context, id uuid.UUID) (*Order, error)
+	UpdateOrderStatus(ctx context.Context, orderID uuid.UUID, status OrderStatus) error
 }
 
 type Storage interface {
@@ -67,3 +68,29 @@ var (
 	ErrInvalidAmount = errors.New("amount must be greater than zero")
 	ErrInvalidUserID = errors.New("invalid user_id")
 )
+
+type OutboxMessage struct {
+	ID           uuid.UUID  `json:"id"`
+	OccurredAt   time.Time  `json:"occurred_at"`
+	EventType    string     `json:"event_type"`
+	Payload      []byte     `json:"payload"`
+	DispatchedAt *time.Time `json:"dispatched_at"`
+}
+
+type InboxMessage struct {
+	ID          uuid.UUID  `json:"id"`
+	ReceivedAt  time.Time  `json:"received_at"`
+	EventType   string     `json:"event_type"`
+	Payload     []byte     `json:"payload"`
+	ProcessedAt *time.Time `json:"processed_at"`
+}
+
+type PaymentSucceededEvent struct {
+	OrderID string  `json:"order_id"`
+	Amount  float64 `json:"amount"`
+}
+
+type PaymentFailedEvent struct {
+	OrderID string `json:"order_id"`
+	Reason  string `json:"reason"`
+}

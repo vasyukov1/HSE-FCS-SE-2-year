@@ -70,8 +70,6 @@ docker-compose up --build
 #### Работа со счетами
 
 - Создать счёт:
-     ```bash
-  curl -X POST "http://localhost:8080/accounts/create"
     ```bash
     curl -X POST "http://localhost:8080/accounts/create"
     ```
@@ -131,20 +129,21 @@ cd <MICROSERVICE_NAME>
 
 Выполните следующие команды:
 
- ```bash
- go test -coverprofile=coverage.out ./internal/...
- ```
+```bash
+go test -coverprofile=coverage.out ./internal/...
+```
 
-Просмотр покрытого тестами кода
- ```bash
- go tool cover -html=coverage.out
- ```
-Просмотр процентного покрытия тестами
+Просмотр покрытого тестами кода:
+```bash
+go tool cover -html=coverage.out
+```
+
+Просмотр процентного покрытия тестами:
 ```bash
 go tool cover -func=coverage.out
 ```
 
-Процентное покрытие кода каждого сервиса >17%.
+Процентное покрытие кода каждого сервиса >15%.
 
 ---
 
