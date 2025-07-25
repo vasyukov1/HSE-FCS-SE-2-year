@@ -98,7 +98,7 @@
 
 К полученым пользователям добавляем их таргет. Удаляем те объекты, которые не имеют значения целевой переменной.
 
-<img src="/Users/alexvasyukov/Desktop/VK Education Practice/scheme.png" alt="scheme" style="width: 800px;"/>
+<img src="https://raw.githubusercontent.com/vasyukov1/HSE-FCS-SE-2-year/refs/heads/main/VK_Education_Practice/scheme.png" alt="scheme" style="width: 800px;"/>
 
 ---
 
